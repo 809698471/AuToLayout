@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.administrator.autolayout.ui.activity.MainActivity">
+    tools:context="com.example.administrator.autolayout.ui.activity.WelcomeActivity">
 
     <Button
-        android:id="@+id/bu_start"
+        android:id="@+id/bu_welcome"
         android:layout_width="300px"
         android:layout_height="200px"
         android:layout_centerInParent="true"
-        android:text="启动页,点击2秒跳转欢迎页" />
+        android:text="轮播图页，点击跳转首页" />
 </RelativeLayout>
