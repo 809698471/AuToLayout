@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context="com.example.administrator.autolayout.ui.activity.WelcomeActivity">
 
     <Button
+
         android:id="@+id/bu_welcome"
         android:layout_width="300px"
         android:layout_height="200px"
