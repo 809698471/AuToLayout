@@ -25,7 +25,9 @@
             android:value="1334" />
 
         <activity android:name=".ui.activity.WelcomeActivity" />
-        <activity android:name=".ui.activity.HomeActivity"></activity>
+        <activity android:name=".ui.activity.HomeActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".ui.activity.RegisterActivity"></activity>
     </application>
 
 </manifest>

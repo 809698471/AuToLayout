@@ -11,22 +11,30 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*
-*  启动界面
+*  登录界面
 * */
-public class MainActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
 
-    @BindView(R.id.bu_start)
-    Button buStart;
+    @BindView(R.id.bu_register)
+    Button buRegister;
+    @BindView(R.id.bu_login)
+    Button buLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        buStart.setOnClickListener(new View.OnClickListener() {
+        buRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(WelcomeActivity.class);
+
+            }
+        });
+        buLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(HomeActivity.class);
             }
         });
     }

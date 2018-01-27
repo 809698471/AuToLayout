@@ -10,6 +10,9 @@ import com.example.administrator.autolayout.ui.BaseActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/*
+*  欢迎界面   轮播图
+* */
 public class WelcomeActivity extends BaseActivity {
 
     @BindView(R.id.bu_welcome)
@@ -23,7 +26,7 @@ public class WelcomeActivity extends BaseActivity {
         buWelcome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(HomeActivity.class);
+                startActivity(LoginActivity.class);
             }
         });
     }
