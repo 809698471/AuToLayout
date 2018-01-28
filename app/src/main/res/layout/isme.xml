@@ -134,7 +134,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"
@@ -186,7 +186,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"
@@ -237,7 +237,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"
@@ -288,7 +288,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"
@@ -339,7 +339,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"
@@ -391,7 +391,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"
@@ -443,7 +443,7 @@
                 android:layout_width="40px"
                 android:layout_height="40px"
                 android:layout_marginRight="38px"
-                android:src="@drawable/isme_leftbutt" />
+                android:src="@drawable/right_button" />
         </LinearLayout>
         <View
             android:layout_width="600px"

@@ -163,9 +163,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#817d81" />
-    <!--<帮助中心>-->
+    <!--<意见建议>-->
     <LinearLayout
-        android:id="@+id/helpcenter_settings"
         android:layout_width="match_parent"
         android:layout_height="100px"
         android:orientation="horizontal">
@@ -175,7 +174,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="50px"
             android:gravity="center_vertical"
-            android:text="帮助中心"
+            android:text="意见建议"
             android:textSize="32px" />
 
         <View

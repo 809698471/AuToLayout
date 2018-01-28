@@ -8,12 +8,12 @@ import android.widget.LinearLayout;
 import com.example.administrator.autolayout.R;
 import com.example.administrator.autolayout.ui.BaseActivity;
 
-//设置界面
+//设置
 public class SettingActivity extends BaseActivity {
 
     private ImageView back_settings;//返回按钮
     private LinearLayout setting_safety;//安全设置
-    private LinearLayout helpcenter_settings;
+    private LinearLayout helpcenter_settings;//帮助中心
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +30,11 @@ public class SettingActivity extends BaseActivity {
                 startActivity(SafetyActivity.class);
             }
         });
-        helpcenter_settings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 
     private void initView() {
         back_settings = (ImageView) findViewById(R.id.back_settings);
         setting_safety = (LinearLayout) findViewById(R.id.setting_safety);
-        helpcenter_settings = (LinearLayout) findViewById(R.id.helpcenter_settings);
     }
 }

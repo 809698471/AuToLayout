@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.administrator.autolayout.R;
+import com.example.administrator.autolayout.ui.activity.HelpCenterActivity;
 import com.example.administrator.autolayout.ui.activity.SettingActivity;
 
 /**
@@ -43,7 +44,12 @@ public class PersonalFragment extends Fragment {
                 startActivity(new Intent(getContext(), SettingActivity.class));
             }
         });
-
+        isme_help_seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), HelpCenterActivity.class));
+            }
+        });
     }
 
 

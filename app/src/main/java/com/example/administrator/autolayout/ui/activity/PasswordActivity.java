@@ -11,7 +11,7 @@ import com.example.administrator.autolayout.R;
 import com.example.administrator.autolayout.ui.BaseActivity;
 
 public class PasswordActivity extends BaseActivity {
-
+//修改密码
     private ImageView back_settings;
     private EditText mFormer_password;
     private EditText mNew_password;

@@ -11,7 +11,7 @@ import com.example.administrator.autolayout.R;
 import com.example.administrator.autolayout.ui.BaseActivity;
 
 public class PhoneActivity extends BaseActivity {
-
+//绑定手机
     private ImageView back_settings;
     private EditText phone_id;
     private EditText verification_id;
