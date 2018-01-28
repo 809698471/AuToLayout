@@ -17,8 +17,7 @@
             android:layout_centerInParent="true"
             android:background="@drawable/shape_two"
             android:iconifiedByDefault="true"
-            android:imeOptions="actionSearch"
-            tools:ignore="NewApi" />
+            android:imeOptions="actionSearch" />
         <ImageView
             android:id="@+id/iv_message_shtick"
             android:layout_width="wrap_content"
@@ -26,8 +25,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20px"
-            android:layout_margin="20px"
-            android:src="@mipmap/btn_top_message" />
+            android:src="@drawable/btn_top_message" />
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"

@@ -7,7 +7,7 @@ import com.example.administrator.autolayout.ui.BaseActivity;
 /*
 *  路线详情
 * */
-public class RoadDetailsActivity extends BaseActivity {
+public class  RoadDetailsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

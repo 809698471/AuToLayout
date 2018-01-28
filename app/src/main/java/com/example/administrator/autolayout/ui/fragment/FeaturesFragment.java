@@ -11,6 +11,10 @@ import android.widget.ListView;
 
 import com.example.administrator.autolayout.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by 韩学文 on 2018/1/28.
  * 愿我余生从心所欲任性妄为
@@ -21,24 +25,24 @@ import com.example.administrator.autolayout.R;
 *  特色
 * */
 public class FeaturesFragment extends Fragment {
-
-
-    private ListView lv_shtick;
+    @BindView(R.id.rv_shtick)
+    ListView rvShtick;
+    Unbinder unbinder;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_orderform, container, false);
-        initView(view);
-        lv_shtick.setAdapter(new LvShtickAdapter());
-
+        View view = inflater.inflate(R.layout.features, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        rvShtick.setAdapter(new LvShtickAdapter());
         return view;
     }
 
-    private void initView(View view) {
-        lv_shtick = (ListView) view.findViewById(R.id.lv_shtick);
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
-
 
     private class LvShtickAdapter extends BaseAdapter {
         @Override
@@ -58,7 +62,7 @@ public class FeaturesFragment extends Fragment {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.orderform_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.lvshtickitem, parent, false);
 
             return convertView;
         }
