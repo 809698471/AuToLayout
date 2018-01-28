@@ -58,7 +58,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_btn:
-                startActivity(InvoicingActivity.class);
+                startActivity(HomeActivity.class);
                 break;
             case R.id.login_wangji:
                 new Handler().postDelayed(new Runnable() {
