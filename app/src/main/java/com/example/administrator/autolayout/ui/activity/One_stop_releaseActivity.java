@@ -1,16 +1,15 @@
 package com.example.administrator.autolayout.ui.activity;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.administrator.autolayout.R;
-import com.example.administrator.autolayout.ui.BaseActivity;
-//注册页面
-public class RegisterActivity extends BaseActivity {
+
+public class One_stop_releaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-
+        setContentView(R.layout.activity_one_stop_release);
     }
 }
