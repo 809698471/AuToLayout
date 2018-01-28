@@ -1,18 +1,22 @@
 package com.example.administrator.autolayout.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.administrator.autolayout.R;
+import com.example.administrator.autolayout.ui.activity.GuideStyleActivity;
+import com.example.administrator.autolayout.ui.activity.RoadDetailsActivity;
 import com.recker.flybanner.FlyBanner;
+import com.zhy.autolayout.utils.AutoUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,10 +105,21 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             ((ThreeViewHolder) holder).tv_content_two.setText(stringList1.get(1));
             ((ThreeViewHolder) holder).tv_content_three.setText(stringList1.get(2));
             ((ThreeViewHolder) holder).tv_content_for.setText(stringList1.get(3));
-
+            ((ThreeViewHolder) holder).cv_one.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(new Intent(context, RoadDetailsActivity.class));
+                }
+            });
         } else if (holder instanceof ForViewHolder) {
             ScrollDisabledListViewAdapter adapter = new ScrollDisabledListViewAdapter(stringList2);
             ((ForViewHolder) holder).viewById.setAdapter(adapter);
+            ((ForViewHolder) holder).guidestyle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(new Intent(context, GuideStyleActivity.class));
+                }
+            });
         }
     }
 
@@ -120,6 +135,7 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         public OneViewHolder(View v1) {
             super(v1);
+            AutoUtils.autoSize(v1);
             fl_banner_one = v1.findViewById(R.id.fl_banner_one);
         }
     }
@@ -134,6 +150,7 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         public TwoViewHolder(View v2) {
             super(v2);
+            AutoUtils.autoSize(v2);
             tv_one = v2.findViewById(R.id.tv_one);
             tv_two = v2.findViewById(R.id.tv_two);
             tv_three = v2.findViewById(R.id.tv_three);
@@ -149,15 +166,16 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         private TextView tv_content_two;
         private TextView tv_content_three;
         private TextView tv_content_for;
-        private LinearLayout lineOne;
+        private CardView cv_one;
 
         public ThreeViewHolder(View v3) {
             super(v3);
+            AutoUtils.autoSize(v3);
             tv_content = v3.findViewById(R.id.tv_content_card);
             tv_content_two = v3.findViewById(R.id.tv_content_two);
             tv_content_three = v3.findViewById(R.id.tv_content_three);
             tv_content_for = v3.findViewById(R.id.tv_content_for);
-            lineOne = v3.findViewById(R.id.line_one_three);
+            cv_one = v3.findViewById(R.id.cv_one);
 
         }
     }
@@ -170,6 +188,7 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
         public ForViewHolder(View v4) {
             super(v4);
+            AutoUtils.autoSize(v4);
             viewById = v4.findViewById(R.id.lv_suggect);
             guidestyle = v4.findViewById(R.id.rl_guidestyle_for);
 

@@ -20,6 +20,7 @@
             android:imeOptions="actionSearch" />
 
         <ImageView
+            android:id="@+id/iv_message_recommend"
             android:layout_width="33px"
             android:layout_height="26px"
             android:layout_alignParentRight="true"

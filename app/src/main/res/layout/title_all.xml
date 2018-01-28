@@ -9,6 +9,7 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/iv_back_all"
             android:layout_width="17px"
             android:layout_height="31px"
             android:layout_centerVertical="true"
@@ -16,6 +17,7 @@
             android:src="@mipmap/top_back_left" />
 
         <TextView
+            android:id="@+id/tv_title_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -25,6 +27,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/iv_message_all"
             android:layout_width="33px"
             android:layout_height="26px"
             android:layout_alignParentRight="true"

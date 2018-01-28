@@ -1,5 +1,6 @@
 package com.example.administrator.autolayout.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.administrator.autolayout.R;
 import com.example.administrator.autolayout.adapter.RvSuggestAdapter;
+import com.example.administrator.autolayout.ui.activity.MessageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,8 @@ public class RecommendFragment extends Fragment {
     @BindView(R.id.rv_suggest)
     RecyclerView rvSuggest;
     Unbinder unbinder;
+    @BindView(R.id.iv_message_recommend)
+    ImageView ivMessageRecommend;
 
     @Nullable
     @Override
@@ -64,6 +69,12 @@ public class RecommendFragment extends Fragment {
         stringList2.add("导游D");
         RvSuggestAdapter adapter = new RvSuggestAdapter(getActivity(), strings, stringList, stringList1, stringList2);
         rvSuggest.setAdapter(adapter);
+        ivMessageRecommend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MessageActivity.class));
+            }
+        });
         return view;
     }
 
