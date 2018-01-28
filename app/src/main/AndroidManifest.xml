@@ -37,7 +37,11 @@
         <activity android:name=".ui.activity.SafetyActivity" />
         <activity android:name=".ui.activity.PhoneActivity" />
         <activity android:name=".ui.activity.PasswordActivity" />
-        <activity android:name=".ui.activity.HelpCenterActivity"></activity>
+        <activity android:name=".ui.activity.HelpCenterActivity" />
+        <activity android:name=".ui.activity.ReleaseItineraryActivity" />
+        <activity android:name=".ui.activity.One_stop_releaseActivity" />
+        <activity android:name=".ui.activity.Sub_station_releaseActivity" />
+        <activity android:name=".ui.activity.InvoicingActivity"></activity>
     </application>
 
 </manifest>

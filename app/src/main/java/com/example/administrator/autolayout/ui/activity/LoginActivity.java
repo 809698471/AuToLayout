@@ -58,7 +58,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_btn:
-startActivity(HomeActivity.class);
+                startActivity(InvoicingActivity.class);
                 break;
             case R.id.login_wangji:
                 new Handler().postDelayed(new Runnable() {
@@ -70,7 +70,7 @@ startActivity(HomeActivity.class);
                         //制隐藏Android输入法窗口
                         // inputManager.hideSoftInputFromWindow(edit.getWindowToken(),0);
                     }
-                },100);
+                }, 100);
 
                 //创建一个pop 必须传递的三个字段view  宽，高  三个少了一个出不来
                 View view = View.inflate(LoginActivity.this, R.layout.popupview, null);
@@ -81,7 +81,7 @@ startActivity(HomeActivity.class);
                 popupWindow.setOutsideTouchable(true);
                 popupWindow.setBackgroundDrawable(new ColorDrawable(0));
                 //设置pop在btn的下面x方向偏移，y方向偏移，这里的show方法一定要放在所有的设置之后，否则消失会不起作用
-                popupWindow.showAsDropDown(login_wangji, -50,0);
+                popupWindow.showAsDropDown(login_wangji, -50, 0);
                 //设置popwindow的消失的监听
                 popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
                     @Override
