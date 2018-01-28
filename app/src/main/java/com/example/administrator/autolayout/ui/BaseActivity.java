@@ -1,12 +1,9 @@
 package com.example.administrator.autolayout.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -25,6 +22,9 @@ public abstract class BaseActivity extends AutoLayoutActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        /*
+        *  沉浸式状态栏
+        * */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             int flagTranslucentStatus = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
             int flagTranslucentNavigation = WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;

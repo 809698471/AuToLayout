@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.autolayout.ui.activity.MainActivity">
 
+    <include layout="@layout/title_all"></include>
+
     <Button
         android:id="@+id/bu_start"
         android:layout_width="300px"
