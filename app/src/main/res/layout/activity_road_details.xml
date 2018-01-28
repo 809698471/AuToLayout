@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.autolayout.ui.activity.MainActivity">
+    tools:context="com.example.administrator.autolayout.ui.activity.RoadDetailsActivity">
 
     <include layout="@layout/title_all"></include>
 
-    <Button
-        android:id="@+id/bu_start"
-        android:layout_width="300px"
-        android:layout_height="200px"
-        android:layout_centerInParent="true"
-        android:text="启动页,点击2秒跳转欢迎页" />
 </RelativeLayout>

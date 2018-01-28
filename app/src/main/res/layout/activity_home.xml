@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.example.administrator.autolayout.ui.activity.HomeActivity">
 
-    <Button
-        android:layout_width="300px"
-        android:layout_height="100px"
-        android:layout_centerInParent="true"
-        android:text="首页" />
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_home"
+        android:layout_width="match_parent"
+        android:layout_height="98px"
+        android:layout_alignParentBottom="true"></android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/tab_home"></android.support.v4.view.ViewPager>
 </RelativeLayout>

@@ -3,6 +3,7 @@
     package="com.example.administrator.autolayout">
 
     <application
+        android:name=".app.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,7 +28,11 @@
         <activity android:name=".ui.activity.WelcomeActivity" />
         <activity android:name=".ui.activity.HomeActivity" />
         <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.RegisterActivity"></activity>
+        <activity android:name=".ui.activity.RegisterActivity" />
+        <activity android:name=".ui.activity.MessageActivity" />
+        <activity android:name=".ui.activity.GuideStyleActivity" />
+        <activity android:name=".ui.activity.GuideDetailActivity" />
+        <activity android:name=".ui.activity.RoadDetailsActivity"></activity>
     </application>
 
 </manifest>
