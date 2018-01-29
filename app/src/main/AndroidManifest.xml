@@ -13,6 +13,7 @@
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -36,13 +37,14 @@
         <activity android:name=".ui.activity.SafetyActivity" />
         <activity android:name=".ui.activity.PhoneActivity" />
         <activity android:name=".ui.activity.PasswordActivity" />
-        <activity android:name=".ui.activity.OrderContentActivity" />
         <activity android:name=".ui.activity.HelpCenterActivity" />
+        <activity android:name=".ui.activity.ReleaseItineraryActivity" />
         <activity android:name=".ui.activity.One_stop_releaseActivity" />
         <activity android:name=".ui.activity.Sub_station_releaseActivity" />
         <activity android:name=".ui.activity.InvoicingActivity" />
-        <activity android:name=".ui.activity.CollectActivity" />
+        <activity android:name=".ui.activity.CollectActivity"></activity>
         <activity android:name=".ui.activity.OrderDetailsActivity" />
+
     </application>
 
 </manifest>

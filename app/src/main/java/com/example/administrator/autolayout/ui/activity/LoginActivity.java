@@ -41,7 +41,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private void initView() {
         login_edit_yhm = (EditText) findViewById(R.id.login_edit_yhm);
         login_edit_mm = (EditText) findViewById(R.id.login_edit_mm);
-        login_btn = (Button) findViewById(R.id.login_btn);
+        login_btn =     (Button) findViewById(R.id.login_btn);
         login_wangji = (TextView) findViewById(R.id.login_wangji);
         login_zhuce = (TextView) findViewById(R.id.login_zhuce);
         login_zhuce.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
