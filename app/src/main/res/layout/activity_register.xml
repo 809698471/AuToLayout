@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context="com.example.administrator.autolayout.ui.activity.RegisterActivity">
+    tools:context="com.silent.fiveghost.tourist.ui.activity.RegisterActivity">
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"

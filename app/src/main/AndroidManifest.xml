@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.autolayout">
+    package="com.silent.fiveghost.tourist">
 
     <application
-        android:name=".app.MyApp"
+        android:name=".app.MyAppLication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -38,12 +38,12 @@
         <activity android:name=".ui.activity.PhoneActivity" />
         <activity android:name=".ui.activity.PasswordActivity" />
         <activity android:name=".ui.activity.HelpCenterActivity" />
-        <activity android:name=".ui.activity.ReleaseItineraryActivity" />
         <activity android:name=".ui.activity.One_stop_releaseActivity" />
         <activity android:name=".ui.activity.Sub_station_releaseActivity" />
         <activity android:name=".ui.activity.InvoicingActivity" />
         <activity android:name=".ui.activity.CollectActivity"></activity>
         <activity android:name=".ui.activity.OrderDetailsActivity" />
+        <activity android:name=".ui.activity.OrderContentActivity"></activity>
 
     </application>
 

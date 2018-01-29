@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@mipmap/login_pic_bgx"
     android:orientation="vertical"
-    tools:context="com.example.administrator.autolayout.ui.activity.LoginActivity">
+    tools:context="com.silent.fiveghost.tourist.ui.activity.LoginActivity">
 
     <View
         android:layout_width="match_parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.administrator.autolayout.ui.activity.RoadDetailsActivity">
+    tools:context="com.silent.fiveghost.tourist.ui.activity.RoadDetailsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,9 +16,35 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:background="@mipmap/ic_launcher_round"
+                android:background="@mipmap/background"
                 android:layout_width="match_parent"
-                android:layout_height="980px"></RelativeLayout>
+                android:layout_height="980px">
+                <RelativeLayout
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="190px">
+                    <Button
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="140px"
+                        android:layout_height="56px"
+                        android:background="@color/gree"
+                        android:text="立即咨询"
+                        android:layout_marginBottom="45px"
+                        android:layout_marginRight="40px"
+                        />
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginLeft="34px"
+                        android:textColor="#fff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="大理古城小团三日游"
+                        />
+
+                </RelativeLayout>
+                
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
