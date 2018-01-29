@@ -89,8 +89,15 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:layout_width="650px"
+            android:layout_height="2px"
+            android:layout_marginLeft="75px"
+            android:background="#91918b" />
         <!--<收藏路线>-->
         <LinearLayout
+            android:id="@+id/isme_collect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="66px"
@@ -136,11 +143,6 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
-        <View
-            android:layout_width="600px"
-            android:layout_height="2px"
-            android:layout_marginLeft="75px"
-            android:background="#91918b" />
         <!--<我的关注>-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -188,8 +190,9 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
-            android:layout_width="600px"
+            android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />
@@ -239,8 +242,9 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
-            android:layout_width="600px"
+            android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />
@@ -290,8 +294,9 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
-            android:layout_width="600px"
+            android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />
@@ -341,8 +346,9 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
-            android:layout_width="600px"
+            android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />
@@ -393,8 +399,9 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
-            android:layout_width="600px"
+            android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />
@@ -445,8 +452,9 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
-            android:layout_width="600px"
+            android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />

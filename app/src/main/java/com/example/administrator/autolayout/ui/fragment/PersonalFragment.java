@@ -11,15 +11,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.administrator.autolayout.R;
+import com.example.administrator.autolayout.ui.activity.CollectActivity;
 import com.example.administrator.autolayout.ui.activity.HelpCenterActivity;
 import com.example.administrator.autolayout.ui.activity.SettingActivity;
 
-/**
- * Created by 韩学文 on 2018/1/28.
- * 愿我余生从心所欲任性妄为
- * 宁愿做灯红酒绿中张牙舞爪的鬼
- * 也不做平淡生活里委曲求全的谁
- */
+
 /*
 * 个人中心-----
 * */
@@ -27,6 +23,7 @@ public class PersonalFragment extends Fragment {
     private ImageView isme_backbutton;//返回按钮
     private LinearLayout isme_settings_six;//设置
     private LinearLayout isme_help_seven;//帮助
+    private LinearLayout isme_collect;//收藏
 
     @Nullable
     @Override
@@ -50,6 +47,12 @@ public class PersonalFragment extends Fragment {
                 startActivity(new Intent(getContext(), HelpCenterActivity.class));
             }
         });
+        isme_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), CollectActivity.class));
+            }
+        });
     }
 
 
@@ -57,6 +60,7 @@ public class PersonalFragment extends Fragment {
         isme_backbutton = (ImageView) view.findViewById(R.id.isme_backbutton);
         isme_settings_six = (LinearLayout) view.findViewById(R.id.isme_settings_six);
         isme_help_seven = (LinearLayout) view.findViewById(R.id.isme_helpzx_seven);
+        isme_collect = (LinearLayout) view.findViewById(R.id.isme_collect);
     }
 
 

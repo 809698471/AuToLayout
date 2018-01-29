@@ -41,7 +41,8 @@
         <activity android:name=".ui.activity.ReleaseItineraryActivity" />
         <activity android:name=".ui.activity.One_stop_releaseActivity" />
         <activity android:name=".ui.activity.Sub_station_releaseActivity" />
-        <activity android:name=".ui.activity.InvoicingActivity"></activity>
+        <activity android:name=".ui.activity.InvoicingActivity" />
+        <activity android:name=".ui.activity.CollectActivity"></activity>
     </application>
 
 </manifest>
