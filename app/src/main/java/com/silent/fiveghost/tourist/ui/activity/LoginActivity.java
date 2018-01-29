@@ -16,8 +16,9 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.ui.BaseActivity;
+import com.silent.fiveghost.tourist.ui.Join;
 
 /*
 *  登录界面
@@ -25,11 +26,15 @@ import com.silent.fiveghost.tourist.R;
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
 
-    private EditText login_edit_yhm;
-    private EditText login_edit_mm;
-    private Button login_btn;
-    private TextView login_wangji;
-    private TextView login_zhuce;
+    private EditText login_edit_yhm;//用户名
+    private EditText login_edit_mm;//密码
+    private Button login_btn;//登录
+    private TextView login_wangji;//忘记密码
+    private TextView login_zhuce;//注册
+    private EditText pop_phone;
+    private EditText pop_password;
+    private EditText pop_code;
+    private Button pop_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,25 +46,30 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private void initView() {
         login_edit_yhm = (EditText) findViewById(R.id.login_edit_yhm);
         login_edit_mm = (EditText) findViewById(R.id.login_edit_mm);
-        login_btn =     (Button) findViewById(R.id.login_btn);
+        login_btn = (Button) findViewById(R.id.login_btn);
         login_wangji = (TextView) findViewById(R.id.login_wangji);
         login_zhuce = (TextView) findViewById(R.id.login_zhuce);
         login_zhuce.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
         login_zhuce.getPaint().setAntiAlias(true);//抗锯齿
         login_zhuce.setText(Html.fromHtml("" + "新用户？立即注册" + ""));
+
         login_edit_yhm.setOnClickListener(this);
         login_edit_mm.setOnClickListener(this);
         login_btn.setOnClickListener(this);
         login_wangji.setOnClickListener(this);
         login_zhuce.setOnClickListener(this);
+
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            //登录
             case R.id.login_btn:
-                startActivity(HomeActivity.class);
+                loginSubmit();
                 break;
+            //忘记密码
             case R.id.login_wangji:
                 new Handler().postDelayed(new Runnable() {
                     @Override
@@ -74,6 +84,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                 //创建一个pop 必须传递的三个字段view  宽，高  三个少了一个出不来
                 View view = View.inflate(LoginActivity.this, R.layout.popupview, null);
+                pop_phone = (EditText) view.findViewById(R.id.pop_phone);
+                pop_password = (EditText) view.findViewById(R.id.pop_password);
+                pop_code = (EditText) view.findViewById(R.id.pop_code);
+                pop_code.setOnClickListener(this);
+                pop_btn = (Button) view.findViewById(R.id.pop_btn);
+                pop_btn.setOnClickListener(this);
                 PopupWindow popupWindow = new PopupWindow(view, 900, 1400);
                 //获取焦点
                 popupWindow.setFocusable(true);
@@ -95,24 +111,55 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 //                        .setDuration(500)//
 //                        .start();
                 break;
+            //注册
             case R.id.login_zhuce:
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
                 break;
+            //pop获取验证码点击事件
+            case R.id.pop_btn:
+                popSubmit();
+                break;
         }
     }
 
-    private void submit() {
-        // validate
+    private void loginSubmit() {
         String yhm = login_edit_yhm.getText().toString().trim();
-        if (TextUtils.isEmpty(yhm)) {
-            Toast.makeText(this, "用户名/手机号/邮箱", Toast.LENGTH_SHORT).show();
+        String mm = login_edit_mm.getText().toString().trim();
+        if (yhm == null || yhm.equals("")) {//帐号为空时
+            Toast.makeText(this, "请输入帐号", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (mm == null || mm.equals("")) {//密码为空时
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+        }
+
+        if (Join.isMobile(yhm) || Join.isPass(mm)) {
+            Toast.makeText(this, "成功", Toast.LENGTH_SHORT).show();
+            startActivity(HomeActivity.class);
+        } else {
+
+            Toast.makeText(this, "失败", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private void popSubmit() {
+        // validate
+        String phone = pop_phone.getText().toString().trim();
+        if (TextUtils.isEmpty(phone)) {
+            Toast.makeText(this, "注册所用手机号", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String mm = login_edit_mm.getText().toString().trim();
-        if (TextUtils.isEmpty(mm)) {
-            Toast.makeText(this, "6位数字或字母", Toast.LENGTH_SHORT).show();
+        String password = pop_password.getText().toString().trim();
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String code = pop_code.getText().toString().trim();
+        if (TextUtils.isEmpty(code)) {
+            Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
             return;
         }
 

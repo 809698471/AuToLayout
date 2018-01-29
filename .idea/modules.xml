@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AuToLayout.iml" filepath="$PROJECT_DIR$/AuToLayout.iml" />
+      <module fileurl="file://D:\StudioWork\Au_To_Layout\AuToLayout.iml" filepath="D:\StudioWork\Au_To_Layout\AuToLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Au_To_Layout.iml" filepath="$PROJECT_DIR$/.idea/Au_To_Layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\StudioWork\Au_To_Layout\app\app.iml" filepath="D:\StudioWork\Au_To_Layout\app\app.iml" />
     </modules>
   </component>
 </project>

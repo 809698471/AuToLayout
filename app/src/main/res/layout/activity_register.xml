@@ -17,7 +17,7 @@
         android:layout_marginTop="70px">
 
         <ImageView
-            android:id="@+id/mReturn"
+            android:id="@+id/register_mReturn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/icon_back_normal" />
@@ -47,6 +47,7 @@
         android:textColor="#3ADC96" />
 
     <EditText
+        android:id="@+id/register_phone"
         android:layout_width="630px"
         android:layout_height="80px"
         android:layout_gravity="center"
@@ -66,6 +67,7 @@
         android:textColor="#3ADC96" />
 
     <EditText
+        android:id="@+id/register_code"
         android:layout_width="630px"
         android:layout_height="80px"
         android:layout_gravity="center"
@@ -85,6 +87,7 @@
 
 
     <EditText
+        android:id="@+id/register_password_one"
         android:layout_width="630px"
         android:layout_height="80px"
         android:layout_gravity="center"
@@ -104,6 +107,7 @@
 
 
     <EditText
+        android:id="@+id/register_password_two"
         android:layout_width="630px"
         android:layout_height="80px"
         android:layout_gravity="center"
@@ -114,6 +118,7 @@
         android:gravity="center"
        />
     <Button
+        android:id="@+id/register_btn"
         android:layout_width="538px"
         android:layout_height="94px"
         android:layout_marginTop="200px"
