@@ -19,7 +19,7 @@ public class Paper_invoiceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.paper_invoice, null);
+        View view = inflater.inflate(R.layout.paper_invoice, container, false);
         return view;
     }
 

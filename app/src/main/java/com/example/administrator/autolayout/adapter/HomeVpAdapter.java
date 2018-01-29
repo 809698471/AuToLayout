@@ -13,18 +13,12 @@ import java.util.List;
  * 也不做平淡生活里委曲求全的谁
  */
 public class HomeVpAdapter extends FragmentPagerAdapter {
-    private List<Fragment> fragmentList;
-    private List<String> stringList;
 
-    public HomeVpAdapter(FragmentManager fm, List<Fragment> fragmentList, List<String> stringList) {
+    private List<Fragment> fragmentList;
+
+    public HomeVpAdapter(FragmentManager fm, List<Fragment> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;
-        this.stringList = stringList;
-    }
-
-    @Override
-    public Fragment getItem(int position) {
-        return fragmentList.get(position);
     }
 
     @Override
@@ -32,8 +26,9 @@ public class HomeVpAdapter extends FragmentPagerAdapter {
         return fragmentList.size();
     }
 
+
     @Override
-    public CharSequence getPageTitle(int position) {
-        return stringList.get(position);
+    public Fragment getItem(int position) {
+        return fragmentList.get(position);
     }
 }

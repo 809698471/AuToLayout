@@ -4,17 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     tools:context="com.example.administrator.autolayout.ui.activity.HomeActivity">
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab_home"
-        android:layout_width="match_parent"
-        android:layout_height="98px"
-        android:layout_alignParentBottom="true"></android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_home"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/tab_home"></android.support.v4.view.ViewPager>
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+    <ImageView
+        android:layout_marginBottom="10px"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/daohanglan"
+        android:layout_width="match_parent"
+        android:layout_height="100px" />
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/daohanglan"
+        android:layout_width="match_parent"
+        android:layout_height="100px" />
+    <RadioGroup
+        android:background="#0000"
+        android:clipChildren="false"
+        android:gravity="bottom"
+        android:id="@+id/mRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <RadioButton
+            android:textColor="@drawable/rb_focus_color"
+            android:checked="true"
+            android:id="@+id/mRadio_home"
+            android:layout_width="0dp"
+            android:drawableTop="@drawable/select_homepage"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center_horizontal"
+            android:text="推荐" />
+
+        <RadioButton
+            android:textColor="@drawable/rb_focus_color"
+            android:id="@+id/mRadio_route"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:gravity="center_horizontal"
+            android:drawableTop="@drawable/select_route"
+            android:text="特色" />
+
+
+        <RadioButton
+            android:id="@+id/mRadio_GrabaSingle"
+            android:layout_width="0dp"
+            android:layout_height="220px"
+            android:drawableTop="@mipmap/bottom_btn_jiahao"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1"
+            android:button="@null"
+           />
+        <RadioButton
+            android:textColor="@drawable/rb_focus_color"
+            android:drawableTop="@drawable/select_order"
+            android:id="@+id/mRadio_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="订单" />
+
+        <RadioButton
+            android:textColor="@drawable/rb_focus_color"
+            android:drawableTop="@drawable/select_persional"
+            android:id="@+id/mRadio_persional"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|bottom"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="我的" />
+    </RadioGroup>
 </RelativeLayout>

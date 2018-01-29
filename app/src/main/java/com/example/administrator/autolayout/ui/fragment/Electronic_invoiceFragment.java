@@ -18,7 +18,7 @@ public class Electronic_invoiceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = View.inflate(getActivity(), R.layout.electronic_invoice, null);
+        View view = inflater.inflate( R.layout.electronic_invoice, container,false);
         return view;
     }
 

@@ -64,6 +64,7 @@
         android:layout_weight="1" />
 
     <Button
+        android:layout_marginBottom="98px"
         android:id="@+id/releaseitinerary_btn1"
         android:layout_width="match_parent"
         android:layout_height="130px"

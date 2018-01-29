@@ -1,43 +1,73 @@
-package com.example.administrator.autolayout.ui.activity;
+package com.example.administrator.autolayout.ui.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import com.example.administrator.autolayout.R;
-import com.example.administrator.autolayout.ui.fragment.One_stop_releaseFragment;
-import com.example.administrator.autolayout.ui.fragment.Sub_station_releaseFragment;
-//发布行程
-public class ReleaseItineraryActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView releaseitinerary_return;
-    private ImageView releaseitinerary_img;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
-    private FrameLayout releaseitinerary_fragment;
+/**
+ * Created by 韩学文 on 2018/1/29.
+ * 愿我余生从心所欲任性妄为
+ * 宁愿做灯红酒绿中张牙舞爪的鬼
+ * 也不做平淡生活里委曲求全的谁
+ */
+/*
+* 发布行程
+* */
+public class ReleaseItineraryFragment extends Fragment implements View.OnClickListener {
+    @BindView(R.id.releaseitinerary_return)
+    ImageView releaseitineraryReturn;
+    @BindView(R.id.releaseitinerary_img)
+    ImageView releaseitineraryImg;
+    @BindView(R.id.releaseitinerary_radio1)
+    RadioButton releaseitineraryRadio1;
+    @BindView(R.id.releaseitinerary_radio2)
+    RadioButton releaseitineraryRadio2;
+    @BindView(R.id.releaseitinerary_fragment)
+    FrameLayout releaseitineraryFragment;
+    Unbinder unbinder;
 
     private FragmentManager msg;
     private FragmentTransaction transaction;
     private One_stop_releaseFragment one_stop_releaseFragment;
-    private RadioButton releaseitinerary_radio1;
-    private RadioButton releaseitinerary_radio2;
     private Sub_station_releaseFragment sub_station_releaseFragment;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_release_itinerary);
-        initView();
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_release_itinerary, container, false);
+
+        unbinder = ButterKnife.bind(this, view);
+        //判断home_pager是否为null
+        if (one_stop_releaseFragment == null) {
+            one_stop_releaseFragment = new One_stop_releaseFragment();
+//            //设置首页默认被选中
+            releaseitineraryRadio1.setChecked(true);
+        }
+        releaseitineraryImg.setOnClickListener(this);
+        releaseitineraryReturn.setOnClickListener(this);
+        releaseitineraryRadio1.setOnClickListener(this);
+        releaseitineraryRadio2.setOnClickListener(this);
         initData();
+        return view;
     }
 
     private void initData() {
         //动态添加Fragment ,获取Fragment 管理器
-        msg = getSupportFragmentManager();
+        msg = getActivity().getSupportFragmentManager();
         //开启Fragment事物
         transaction = msg.beginTransaction();
 
@@ -46,32 +76,11 @@ public class ReleaseItineraryActivity extends AppCompatActivity implements View.
         transaction.commit();
     }
 
-    private void initView() {
-        releaseitinerary_return = (ImageView) findViewById(R.id.releaseitinerary_return);
-        releaseitinerary_img = (ImageView) findViewById(R.id.releaseitinerary_img);
-
-        releaseitinerary_radio1 = (RadioButton) findViewById(R.id.releaseitinerary_radio1);
-        releaseitinerary_radio2 = (RadioButton) findViewById(R.id.releaseitinerary_radio2);
-        releaseitinerary_fragment = (FrameLayout) findViewById(R.id.releaseitinerary_fragment);
-
-//        //判断home_pager是否为null
-        if (one_stop_releaseFragment == null) {
-            one_stop_releaseFragment = new One_stop_releaseFragment();
-//            //设置首页默认被选中
-            releaseitinerary_radio1.setChecked(true);
-        }
-        releaseitinerary_return.setOnClickListener(this);
-        releaseitinerary_img.setOnClickListener(this);
-        releaseitinerary_radio1.setOnClickListener(this);
-        releaseitinerary_radio2.setOnClickListener(this);
-
-
-    }
 
     @Override
     public void onClick(View v) {
         //动态添加Fragment ,获取Fragment 管理器
-        msg = getSupportFragmentManager();
+        msg = getActivity().getSupportFragmentManager();
         //开启Fragment事物
         transaction = msg.beginTransaction();
         //方法2隐藏所有的Fragment。
@@ -84,15 +93,15 @@ public class ReleaseItineraryActivity extends AppCompatActivity implements View.
 
                 break;
             case R.id.releaseitinerary_radio1:
-                if ( one_stop_releaseFragment== null) {
-                one_stop_releaseFragment = new One_stop_releaseFragment();
+                if (one_stop_releaseFragment == null) {
+                    one_stop_releaseFragment = new One_stop_releaseFragment();
                     transaction.add(R.id.releaseitinerary_fragment, this.one_stop_releaseFragment);
                 } else {
                     transaction.show(one_stop_releaseFragment);
                 }
                 break;
             case R.id.releaseitinerary_radio2:
-                if ( sub_station_releaseFragment== null) {
+                if (sub_station_releaseFragment == null) {
 
                     sub_station_releaseFragment = new Sub_station_releaseFragment();
                     transaction.add(R.id.releaseitinerary_fragment, this.sub_station_releaseFragment);
@@ -113,5 +122,11 @@ public class ReleaseItineraryActivity extends AppCompatActivity implements View.
         if (sub_station_releaseFragment != null) {
             transaction.hide(sub_station_releaseFragment);
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 }

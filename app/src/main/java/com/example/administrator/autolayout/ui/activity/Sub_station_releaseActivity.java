@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.administrator.autolayout.R;
-
+/*
+* 分站式发布
+* */
 public class Sub_station_releaseActivity extends AppCompatActivity {
 
     @Override

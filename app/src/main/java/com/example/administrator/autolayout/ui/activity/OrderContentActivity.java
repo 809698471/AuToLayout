@@ -11,30 +11,22 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /*
-*  欢迎界面   轮播图
+* 订单内容——订单详情
 * */
-public class WelcomeActivity extends BaseActivity {
+public class OrderContentActivity extends BaseActivity {
 
-    @BindView(R.id.bu_welcome)
-    Button buWelcome;
-    @BindView(R.id.bu_invoice)
-    Button buInvoice;
+    @BindView(R.id.submit_orders_order)
+    Button submitOrdersOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_order_content);
         ButterKnife.bind(this);
-        buWelcome.setOnClickListener(new View.OnClickListener() {
+        submitOrdersOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(LoginActivity.class);
-            }
-        });
-        buInvoice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(InvoicingActivity.class);
+                startActivity(OrderDetailsActivity.class);
             }
         });
     }

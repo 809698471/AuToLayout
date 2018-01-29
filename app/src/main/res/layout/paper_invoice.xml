@@ -158,13 +158,13 @@
                 android:layout_marginLeft="138px"
                 />
 
-            <ImageView
+          <!--  <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/next"
                 android:layout_gravity="center"
                 ></ImageView>
-
+-->
 
         </LinearLayout>
 

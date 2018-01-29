@@ -12,6 +12,9 @@ import com.example.administrator.autolayout.ui.BaseActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/*
+*  信息界面
+* */
 public class MessageActivity extends BaseActivity {
 
     @BindView(R.id.iv_back_all)
