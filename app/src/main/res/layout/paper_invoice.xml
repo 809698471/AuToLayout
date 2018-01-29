@@ -1,294 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-
-    >
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_height="match_parent">
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="企业抬头"
-                android:layout_marginLeft="94px"
+                android:layout_marginLeft="95px"
                 android:layout_marginTop="50px"
-                android:textColor="#00c493"
-                ></RadioButton>
+                android:text="企业抬头" />
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="个人/非企业单位"
-                android:layout_marginLeft="59px"
+                android:layout_marginLeft="55px"
                 android:layout_marginTop="50px"
-                android:textColor="#000"
-                ></RadioButton>
+                android:text="个人/非企业单位" />
         </RadioGroup>
 
         <LinearLayout
-            android:layout_width="689px"
-            android:layout_height="101px"
-            android:orientation="horizontal"
-            android:layout_margin="27px"
-            android:background="#f6f6f6"
-            >
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="50px"
+            android:background="#f6f6f7">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="发票抬头"
-                android:layout_margin="34px"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="填写发票抬头"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                >
-            </TextView>
-        </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="发票抬头" />
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="请填写发票抬头"
+                android:textColorHint="#7c7c7e" />
 
-
-
-
-        <LinearLayout
-            android:layout_width="689px"
-            android:layout_height="101px"
-            android:orientation="horizontal"
-            android:layout_margin="27px"
-            android:background="#f6f6f6"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="税号"
-                android:layout_margin="34px"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="          填写纳税人识别号"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="689px"
-            android:layout_height="101px"
-            android:orientation="horizontal"
-            android:layout_margin="27px"
-            android:background="#f6f6f6"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="发票内容"
-                android:layout_margin="34px"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="客运服务费"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="689px"
-            android:layout_height="101px"
-            android:orientation="horizontal"
-            android:layout_margin="27px"
-            android:background="#f6f6f6"
-            >
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="30px"
+            android:background="#f6f6f7">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="发票金额"
-                android:layout_margin="34px"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="请输入金额"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="税号" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="125px"
+                android:background="@null"
+                android:hint="请填写纳税人识别号"
+                android:textColorHint="#7c7c7e" />
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="689px"
-            android:layout_height="101px"
-            android:orientation="horizontal"
-            android:layout_margin="27px"
-            android:background="#f6f6f6"
-            >
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="50px"
+            android:background="#f6f6f7">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="更多信息"
-                android:layout_margin="34px"></TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="发票内容" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="客运服务费"
+                android:textColorHint="#7c7c7e" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="50px"
+            android:background="#f6f6f7">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="购买方，备注，收款人等"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="发票金额" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="请输入金额"
+                android:textColorHint="#7c7c7e" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="50px"
+            android:background="#f6f6f7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="更多信息" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="购买方，备注，收款人等"
+                android:textColorHint="#7c7c7e" />
+
+            <ImageView
+                android:src="@mipmap/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35px"
+                android:layout_gravity="center_vertical"
                 />
 
-          <!--  <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/next"
-                android:layout_gravity="center"
-                ></ImageView>
--->
-
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="50px"
+            android:background="#f6f6f7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="电子邮件" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="用于向您发送电子行程单"
+                android:textColorHint="#7c7c7e" />
+
+        </LinearLayout>
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="收件信息"
-            android:layout_marginLeft="43px"></TextView>
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="43px"
+            android:layout_marginTop="41px"
+            android:text="收件信息" />
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="34px">
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="32px"
+            android:background="#f6f6f7">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="发票金额"
-                android:layout_margin="34px"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="请输入金额"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="发票抬头" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="请填写收件人"
+                android:textColorHint="#7c7c7e" />
+
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="34px">
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="32px"
+            android:background="#f6f6f7">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="联系电话"
-                android:layout_margin="34px"></TextView>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="185-0403-0568"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
-        </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="联系电话" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="34px"
-
-            >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="北京市"
-                    android:layout_weight="1"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="北京市"
-                    android:layout_weight="1"
-                    android:textSize="20sp"></TextView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="北京市"
-                    android:layout_weight="1"
-                    android:textSize="20sp"></TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="185-0430-0568"
+                android:textColorHint="#7c7c7e" />
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="34px">
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="32px"
+            android:background="#f6f6f7"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="详细信息"
-                android:layout_margin="34px"></TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="北京市"
+                android:layout_weight="1"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="请填写详细信息 "
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="北京市"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="北京市"
+                android:layout_weight="1"/>
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="34px">
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="32px"
+            android:background="#f6f6f7">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#000"
-                android:text="电子邮件"
-                android:layout_margin="34px"></TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="详细信息" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="请填写详细信息"
+                android:textColorHint="#7c7c7e" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="690px"
+            android:layout_height="103px"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="32px"
+            android:background="#f6f6f7">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="用于向您发送电子邮件行程单"
-                android:textColor="#848587"
-                android:layout_margin="34px"
-                android:layout_marginLeft="138px"
-                >
-            </TextView>
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30px"
+                android:text="电子邮件" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="70px"
+                android:background="@null"
+                android:hint="用于向您发送电子行程单"
+                android:textColorHint="#7c7c7e" />
+
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -297,33 +332,38 @@
             android:text="开票金额不足200元，需要另支付邮费*"
             android:layout_marginLeft="124px"
             android:layout_marginTop="77px"
-            android:textSize="15sp"
+
             ></TextView>
+
+
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="36px"
+            android:layout_marginLeft="60px">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="61px"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                 >
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_launcher"
-                    android:layout_marginLeft="70px"></ImageView>
+                    ></ImageView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="微信"
-android:layout_weight="1"
-                    android:layout_marginLeft="96px"
+                     android:layout_marginLeft="30px"
+
                     ></TextView>
             </LinearLayout>
             <LinearLayout
@@ -331,57 +371,60 @@ android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="61px"
-                android:layout_weight="1">
+                android:layout_marginLeft="126px"
+                android:layout_weight="1"
+               >
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/ic_launcher"
-                    android:layout_marginLeft="126px"></ImageView>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="支付宝"
-android:layout_weight="1"
-                    android:layout_marginLeft="167px"
-                    ></TextView>
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="61px"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_marginLeft="126px"
-                    android:layout_marginRight="60px"
                      ></ImageView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="支付宝"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20px"
+                    ></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="61px"
+                android:layout_marginLeft="139px"
+                android:layout_weight="1"
+                 >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+
+                    android:layout_marginRight="60px"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="货到付款"
-android:layout_weight="1"
-                    android:layout_marginLeft="167px"
+                    android:layout_marginLeft="10px"
+
                     ></TextView>
             </LinearLayout>
 
 
         </LinearLayout>
 
-
-
         <Button
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="130px"
+            android:layout_marginTop="157px"
+            android:background="#00c998"
             android:text="确定开取"
-            android:textColor="#fff"
-            android:background="#00c897"
-            ></Button>
-    </LinearLayout>
-
+            android:textColor="#fff" />
+    </com.zhy.autolayout.AutoLinearLayout>
 </ScrollView>
