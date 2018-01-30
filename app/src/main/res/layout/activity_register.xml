@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pic_bg"
+    android:orientation="vertical"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:orientation="vertical"
     tools:context="com.silent.fiveghost.tourist.ui.activity.RegisterActivity">
 
     <com.zhy.autolayout.AutoLinearLayout
@@ -123,7 +123,7 @@
         android:layout_height="94px"
         android:layout_marginTop="200px"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/btn_havecode_normal"
+       android:background="@color/gree"
         android:text="获取验证码"
    />
     <com.zhy.autolayout.AutoLinearLayout

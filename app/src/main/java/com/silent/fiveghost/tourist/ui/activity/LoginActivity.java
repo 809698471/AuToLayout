@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -17,8 +18,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.bean.ForgetBean;
+import com.silent.fiveghost.tourist.bean.LoginBean;
+import com.silent.fiveghost.tourist.bean.VerificationCodeBean;
+import com.silent.fiveghost.tourist.presenter.IPresenter;
 import com.silent.fiveghost.tourist.ui.BaseActivity;
-import com.silent.fiveghost.tourist.ui.Join;
+import com.silent.fiveghost.tourist.utils.Constant;
+import com.silent.fiveghost.tourist.utils.Join;
+import com.silent.fiveghost.tourist.utils.UrlUtils;
+import com.silent.fiveghost.tourist.view.IView;
+
+import java.util.Map;
 
 /*
 *  登录界面
@@ -35,6 +45,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private EditText pop_password;
     private EditText pop_code;
     private Button pop_btn;
+    private int errcode;
+    private boolean a = true;
+    private PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,18 +65,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         login_zhuce.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);//下划线
         login_zhuce.getPaint().setAntiAlias(true);//抗锯齿
         login_zhuce.setText(Html.fromHtml("" + "新用户？立即注册" + ""));
-
         login_edit_yhm.setOnClickListener(this);
         login_edit_mm.setOnClickListener(this);
         login_btn.setOnClickListener(this);
         login_wangji.setOnClickListener(this);
         login_zhuce.setOnClickListener(this);
 
-
     }
 
     @Override
     public void onClick(View v) {
+
         switch (v.getId()) {
             //登录
             case R.id.login_btn:
@@ -90,7 +102,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 pop_code.setOnClickListener(this);
                 pop_btn = (Button) view.findViewById(R.id.pop_btn);
                 pop_btn.setOnClickListener(this);
-                PopupWindow popupWindow = new PopupWindow(view, 900, 1400);
+                popupWindow = new PopupWindow(view, 900, 1400);
                 //获取焦点
                 popupWindow.setFocusable(true);
                 //window设置背景，如果不设置背景
@@ -118,7 +130,53 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             //pop获取验证码点击事件
             case R.id.pop_btn:
-                popSubmit();
+                if (pop_code.getText().toString() == null || pop_code.getText().toString().equals("")) {
+                    a = true;
+                } else {
+                    a = false;
+                }
+
+                if (a) {
+                    String phone = pop_phone.getText().toString().trim();
+                    String password = pop_password.getText().toString().trim();
+                    if (phone == null) {
+                        showToast("手机号不能为空");
+                        return;
+                    }
+                    if (password == null) {
+                        showToast("密码不能为空");
+                        return;
+                    }
+                    if (phone == null || password == null || phone.equals("") || password.equals("")) {
+                        a = true;
+                        return;
+                    }
+                    Map<String, String> map = Constant.getMap();
+                    map.put("mobile", phone);
+                    map.put("module", "1");
+                    map.put("imei", Constant.getPhoneIMEI(LoginActivity.this));
+                    IPresenter presenter = new IPresenter(new IView<VerificationCodeBean>() {
+
+                        @Override
+                        public void success(VerificationCodeBean verificationCodeBean) {
+                            if (verificationCodeBean.getErrcode() == 1) {
+                                pop_btn.setText("确认修改");
+                            } else {
+                                showToast(verificationCodeBean.getErrmsg());
+                            }
+                        }
+
+                        @Override
+                        public void defeat(String s) {
+
+                        }
+                    });
+                    presenter.DoRequest(UrlUtils.YZM_URL, map);
+                    a = false;
+                } else {
+                    popSubmit();
+                }
+
                 break;
         }
     }
@@ -131,15 +189,33 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             return;
         } else if (mm == null || mm.equals("")) {//密码为空时
             Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            return;
         }
 
-        if (Join.isMobile(yhm) || Join.isPass(mm)) {
-            Toast.makeText(this, "成功", Toast.LENGTH_SHORT).show();
-            startActivity(HomeActivity.class);
-        } else {
+        IPresenter presenter = new IPresenter(new IView<LoginBean>() {
 
-            Toast.makeText(this, "失败", Toast.LENGTH_SHORT).show();
-        }
+            @Override
+            public void success(LoginBean loginBean) {
+                errcode = loginBean.getErrcode();
+                if (errcode == 1) {
+                    Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    startActivity(HomeActivity.class);
+                } else {
+
+                    Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void defeat(String s) {
+
+            }
+        });
+        Map<String, String> map = Constant.getMap();
+        map.put("tel", yhm);
+        map.put("password", mm);
+        presenter.DoRequest(UrlUtils.LOGIN_URL, map);
+
 
     }
 
@@ -162,7 +238,29 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
             return;
         }
+        IPresenter presenter = new IPresenter(new IView<ForgetBean>() {
 
+
+            @Override
+            public void success(ForgetBean forgetBean) {
+                if (forgetBean.getErrcode() == 1) {
+                    showToast("修改成功");
+                    popupWindow.dismiss();
+                } else {
+                    showToast(forgetBean.getErrmsg());
+                }
+            }
+
+            @Override
+            public void defeat(String s) {
+
+            }
+        });
+        Map<String, String> map = Constant.getMap();
+        map.put("tel", "13333596615");
+        map.put("password", "123321");
+        map.put("code", "5478");
+        presenter.DoRequest("http://120.79.137.110:80/api/v1/auth/reset-password", map);
         // TODO validate success, do something
 
 

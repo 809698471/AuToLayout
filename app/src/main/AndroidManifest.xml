@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.silent.fiveghost.tourist">
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:name=".app.MyAppLication"
         android:allowBackup="true"

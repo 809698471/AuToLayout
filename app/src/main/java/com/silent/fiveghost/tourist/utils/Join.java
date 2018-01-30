@@ -1,4 +1,4 @@
-package com.silent.fiveghost.tourist.ui;
+package com.silent.fiveghost.tourist.utils;
 
 import android.text.TextUtils;
 

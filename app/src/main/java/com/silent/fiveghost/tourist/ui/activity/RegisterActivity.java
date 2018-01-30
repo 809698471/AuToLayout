@@ -1,6 +1,7 @@
 package com.silent.fiveghost.tourist.ui.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -8,8 +9,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.bean.RegistBean;
+import com.silent.fiveghost.tourist.bean.VerificationCodeBean;
+import com.silent.fiveghost.tourist.presenter.IPresenter;
 import com.silent.fiveghost.tourist.ui.BaseActivity;
-import com.silent.fiveghost.tourist.ui.Join;
+import com.silent.fiveghost.tourist.utils.Constant;
+import com.silent.fiveghost.tourist.utils.Join;
+import com.silent.fiveghost.tourist.utils.UrlUtils;
+import com.silent.fiveghost.tourist.view.IView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 //注册页面
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
@@ -20,6 +30,8 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
     private EditText register_password_one;//密码
     private EditText register_password_two;//再次确认密码
     private Button register_btn;//获取验证码
+    private Map<String, String> map;
+    int a = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +50,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         register_btn = (Button) findViewById(R.id.register_btn);
         register_mReturn.setOnClickListener(this);
         register_btn.setOnClickListener(this);
+        map = new HashMap<>();
     }
 
     @Override
@@ -49,7 +62,44 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 break;
             //验证码(获取完验证码变更登录)
             case R.id.register_btn:
-                submit();
+
+                if (a++ % 2 == 1) {
+                    String trim = register_phone.getText().toString().trim();
+                    if (trim == null) {
+                        showToast("手机号为空");
+                        return;
+                    }
+
+                    map.put("mobile", trim);
+                    map.put("module", "1");
+                    map.put("imei", Constant.getPhoneIMEI(RegisterActivity.this));
+                    IPresenter presenter = new IPresenter(new IView<VerificationCodeBean>() {
+
+                        @Override
+                        public void success(VerificationCodeBean verificationCodeBean) {
+
+                            Log.e("TAG", "获取验证码:"+ verificationCodeBean.getErrcode());
+                            if ( verificationCodeBean.getErrcode() == 1) {;
+                                register_btn.setText("注册");
+                            } else {
+                                Toast.makeText(RegisterActivity.this, verificationCodeBean.getErrmsg(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void defeat(String s) {
+
+                        }
+                    });
+                    presenter.DoRequest(UrlUtils.YZM_URL, map);
+
+
+                } else {
+
+                  submit();
+                }
+
+
                 break;
         }
     }
@@ -63,25 +113,45 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         if (phone == null || phone.equals("")) {
             Toast.makeText(this, "电话不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else if (yzm == null || yzm.equals("")) {
+        } else if (yzm == null || yzm.equals("")) {
             Toast.makeText(this, "验证码不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else if (one == null || one.equals("")) {
+        } else if (one == null || one.equals("")) {
             Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else if (two == null || two.equals("")) {
+        } else if (two == null || two.equals("")) {
             Toast.makeText(this, "再次密码不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (Join.isMobile(phone) || Join.isPass(one)) {
-            Toast.makeText(this, "成功", Toast.LENGTH_SHORT).show();
-            startActivity(LoginActivity.class);
-        } else {
 
-            Toast.makeText(this, "失败", Toast.LENGTH_SHORT).show();
+            IPresenter presenter = new IPresenter(new IView<RegistBean>() {
+
+                @Override
+                public void success(RegistBean registBean) {
+
+                    Log.e("TAG",  registBean.getErrcode() + "注册返回值");
+                    if ( registBean.getErrcode() == 1) {
+                        Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                        startActivity(LoginActivity.class);
+                        finish();
+                    } else {
+                        Toast.makeText(RegisterActivity.this, registBean.getErrmsg(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }
+
+                @Override
+                public void defeat(String s) {
+
+                }
+            });
+            map.put("tel", phone);
+            map.put("password", one);
+            map.put("category", "2");
+            map.put("code", yzm);
+            presenter.DoRequest(UrlUtils.REGISTER_URL, map);
+
+
         }
-
-
     }
-}
