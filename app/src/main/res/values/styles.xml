@@ -20,4 +20,5 @@
         <item name="android:textColor">@drawable/rb_focus_color</item>
         <item name="android:textSize">12sp</item>
     </style>
+
 </resources>

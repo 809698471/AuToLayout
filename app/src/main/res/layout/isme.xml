@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/isme_background_bg"
     android:orientation="vertical">
 
@@ -38,12 +39,13 @@
             android:layout_marginTop="80px"
             android:orientation="horizontal">
 
-            <ImageView
+            <myviews.RoundImageView
+                android:id="@+id/img_title"
                 android:layout_width="235px"
+                app:type="round"
                 android:layout_height="235px"
                 android:layout_marginLeft="25px"
                 android:src="@drawable/isme_imgtitle" />
-
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,8 +91,6 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
-
         <!--<收藏路线>-->
         <LinearLayout
             android:id="@+id/isme_collect"
@@ -139,16 +139,18 @@
                 android:layout_marginRight="38px"
                 android:src="@drawable/right_button" />
         </LinearLayout>
+
         <View
             android:layout_width="650px"
             android:layout_height="2px"
             android:layout_marginLeft="75px"
+            android:layout_marginTop="10px"
             android:background="#91918b" />
         <!--<我的关注>-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="145px"
-            android:layout_marginTop="29px"
+            android:layout_marginTop="25px"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -459,9 +461,9 @@
             android:layout_height="2px"
             android:layout_marginLeft="75px"
             android:background="#91918b" />
+
         <View
             android:layout_width="650px"
-            android:layout_height="200px"
-            />
+            android:layout_height="200px" />
     </LinearLayout>
 </ScrollView>

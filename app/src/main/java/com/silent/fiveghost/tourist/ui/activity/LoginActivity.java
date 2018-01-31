@@ -257,9 +257,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             }
         });
         Map<String, String> map = Constant.getMap();
-        map.put("tel", "13333596615");
-        map.put("password", "123321");
-        map.put("code", "5478");
+        map.put("tel", phone);
+        map.put("password", password);
+        map.put("code", code);
         presenter.DoRequest("http://120.79.137.110:80/api/v1/auth/reset-password", map);
         // TODO validate success, do something
 
