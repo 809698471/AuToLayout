@@ -1,21 +1,20 @@
 package com.silent.fiveghost.tourist.ui.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
 import android.text.TextUtils;
-import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.silent.fiveghost.tourist.R;
 import com.silent.fiveghost.tourist.bean.ForgetBean;
@@ -24,7 +23,6 @@ import com.silent.fiveghost.tourist.bean.VerificationCodeBean;
 import com.silent.fiveghost.tourist.presenter.IPresenter;
 import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.utils.Constant;
-import com.silent.fiveghost.tourist.utils.Join;
 import com.silent.fiveghost.tourist.utils.UrlUtils;
 import com.silent.fiveghost.tourist.view.IView;
 
@@ -48,6 +46,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private int errcode;
     private boolean a = true;
     private PopupWindow popupWindow;
+    private ImageView pop_img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +95,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
                 //创建一个pop 必须传递的三个字段view  宽，高  三个少了一个出不来
                 View view = View.inflate(LoginActivity.this, R.layout.popupview, null);
+
+                pop_img = (ImageView) view.findViewById(R.id.pop_img);
                 pop_phone = (EditText) view.findViewById(R.id.pop_phone);
                 pop_password = (EditText) view.findViewById(R.id.pop_password);
                 pop_code = (EditText) view.findViewById(R.id.pop_code);
@@ -109,12 +110,18 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 popupWindow.setOutsideTouchable(true);
                 popupWindow.setBackgroundDrawable(new ColorDrawable(0));
                 //设置pop在btn的下面x方向偏移，y方向偏移，这里的show方法一定要放在所有的设置之后，否则消失会不起作用
-                popupWindow.showAsDropDown(login_wangji, -50, 0);
+                popupWindow.showAtLocation(login_wangji, Gravity.CENTER, 0, 0);
                 //设置popwindow的消失的监听
-                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+//                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+//                    @Override
+//                    public void onDismiss() {
+//                        Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+                pop_img.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onDismiss() {
-                        Toast.makeText(LoginActivity.this, "", Toast.LENGTH_SHORT).show();
+                    public void onClick(View v) {
+                        popupWindow.dismiss();
                     }
                 });
 //                //给popWindow设置动画
@@ -125,8 +132,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             //注册
             case R.id.login_zhuce:
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                startActivity(RegisterActivity.class);
+
                 break;
             //pop获取验证码点击事件
             case R.id.pop_btn:
@@ -185,10 +192,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         String yhm = login_edit_yhm.getText().toString().trim();
         String mm = login_edit_mm.getText().toString().trim();
         if (yhm == null || yhm.equals("")) {//帐号为空时
-            Toast.makeText(this, "请输入帐号", Toast.LENGTH_SHORT).show();
+            showToast("请输入帐号");
             return;
         } else if (mm == null || mm.equals("")) {//密码为空时
-            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            showToast("请输入密码");
             return;
         }
 
@@ -198,11 +205,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             public void success(LoginBean loginBean) {
                 errcode = loginBean.getErrcode();
                 if (errcode == 1) {
-                    Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    showToast("登录成功");
                     startActivity(HomeActivity.class);
                 } else {
-
-                    Toast.makeText(LoginActivity.this, "登录失败", Toast.LENGTH_SHORT).show();
+                    showToast("登录失败");
                 }
             }
 
@@ -223,19 +229,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         // validate
         String phone = pop_phone.getText().toString().trim();
         if (TextUtils.isEmpty(phone)) {
-            Toast.makeText(this, "注册所用手机号", Toast.LENGTH_SHORT).show();
+          showToast("注册所用手机号");
             return;
         }
 
         String password = pop_password.getText().toString().trim();
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "请输入密码", Toast.LENGTH_SHORT).show();
+            showToast("请输入密码");
             return;
         }
 
         String code = pop_code.getText().toString().trim();
         if (TextUtils.isEmpty(code)) {
-            Toast.makeText(this, "请输入验证码", Toast.LENGTH_SHORT).show();
+           showToast("请输入验证码");
             return;
         }
         IPresenter presenter = new IPresenter(new IView<ForgetBean>() {
