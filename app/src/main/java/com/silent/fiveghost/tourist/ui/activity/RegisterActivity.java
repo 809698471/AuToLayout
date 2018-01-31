@@ -2,10 +2,12 @@ package com.silent.fiveghost.tourist.ui.activity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.silent.fiveghost.tourist.R;
@@ -14,7 +16,6 @@ import com.silent.fiveghost.tourist.bean.VerificationCodeBean;
 import com.silent.fiveghost.tourist.presenter.IPresenter;
 import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.utils.Constant;
-import com.silent.fiveghost.tourist.utils.Join;
 import com.silent.fiveghost.tourist.utils.UrlUtils;
 import com.silent.fiveghost.tourist.view.IView;
 
@@ -47,6 +48,19 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         register_code = (EditText) findViewById(R.id.register_code);
         register_password_one = (EditText) findViewById(R.id.register_password_one);
         register_password_two = (EditText) findViewById(R.id.register_password_two);
+        //更换软键盘
+        register_password_two.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                submit();
+
+
+               /* if (actionId == EditorInfo.IME_ACTION_GO) {
+                    showToast("cao");
+                }*/
+                return false;
+            }
+        });
         register_btn = (Button) findViewById(R.id.register_btn);
         register_mReturn.setOnClickListener(this);
         register_btn.setOnClickListener(this);
@@ -58,18 +72,15 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         switch (v.getId()) {
             //返回
             case R.id.register_mReturn:
-
+                finish();
                 break;
             //验证码(获取完验证码变更登录)
             case R.id.register_btn:
-
-                if (a++ % 2 == 1) {
-                    String trim = register_phone.getText().toString().trim();
-                    if (trim == null) {
-                        showToast("手机号为空");
-                        return;
-                    }
-
+                String trim = register_phone.getText().toString().trim();
+                if ("".equals(trim)) {
+                    showToast("手机号为空");
+                    return;
+                }
                     map.put("mobile", trim);
                     map.put("module", "1");
                     map.put("imei", Constant.getPhoneIMEI(RegisterActivity.this));
@@ -78,8 +89,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                         @Override
                         public void success(VerificationCodeBean verificationCodeBean) {
 
-                            Log.e("TAG", "获取验证码:"+ verificationCodeBean.getErrcode());
-                            if ( verificationCodeBean.getErrcode() == 1) {;
+                            Log.e("TAG", "获取验证码:" + verificationCodeBean.getErrcode());
+                            if (verificationCodeBean.getErrcode() == 1) {
+                                ;
                                 register_btn.setText("注册");
                             } else {
                                 Toast.makeText(RegisterActivity.this, verificationCodeBean.getErrmsg(), Toast.LENGTH_SHORT).show();
@@ -94,10 +106,11 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                     presenter.DoRequest(UrlUtils.YZM_URL, map);
 
 
-                } else {
 
-                  submit();
-                }
+//                  else {
+//
+//                    submit();
+//                }
 
 
                 break;
@@ -110,48 +123,47 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         String yzm = register_code.getText().toString().trim();
         String one = register_password_one.getText().toString().trim();
         String two = register_password_two.getText().toString().trim();
-        if (phone == null || phone.equals("")) {
+        if ( phone.equals("")) {
             Toast.makeText(this, "电话不能为空", Toast.LENGTH_SHORT).show();
             return;
-        } else if (yzm == null || yzm.equals("")) {
+        } else if ( yzm.equals("")) {
             Toast.makeText(this, "验证码不能为空", Toast.LENGTH_SHORT).show();
             return;
-        } else if (one == null || one.equals("")) {
+        } else if ( one.equals("")) {
             Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
             return;
-        } else if (two == null || two.equals("")) {
+        } else if ( two.equals("")) {
             Toast.makeText(this, "再次密码不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
 
-            IPresenter presenter = new IPresenter(new IView<RegistBean>() {
+        IPresenter presenter = new IPresenter(new IView<RegistBean>() {
 
-                @Override
-                public void success(RegistBean registBean) {
+            @Override
+            public void success(RegistBean registBean) {
 
-                    Log.e("TAG",  registBean.getErrcode() + "注册返回值");
-                    if ( registBean.getErrcode() == 1) {
-                        Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
-                        startActivity(LoginActivity.class);
-                        finish();
-                    } else {
-                        Toast.makeText(RegisterActivity.this, registBean.getErrmsg(), Toast.LENGTH_SHORT).show();
-
-                    }
-                }
-
-                @Override
-                public void defeat(String s) {
+                Log.e("TAG", registBean.getErrcode() + "注册返回值");
+                if (registBean.getErrcode() == 1) {
+                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Toast.makeText(RegisterActivity.this, registBean.getErrmsg(), Toast.LENGTH_SHORT).show();
 
                 }
-            });
-            map.put("tel", phone);
-            map.put("password", one);
-            map.put("category", "2");
-            map.put("code", yzm);
-            presenter.DoRequest(UrlUtils.REGISTER_URL, map);
+            }
+
+            @Override
+            public void defeat(String s) {
+
+            }
+        });
+        map.put("tel", phone);
+        map.put("password", one);
+        map.put("category", "2");
+        map.put("code", yzm);
+        presenter.DoRequest(UrlUtils.REGISTER_URL, map);
 
 
-        }
     }
+}
