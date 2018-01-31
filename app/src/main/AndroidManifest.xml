@@ -45,7 +45,6 @@
         <activity android:name=".ui.activity.CollectActivity"></activity>
         <activity android:name=".ui.activity.OrderDetailsActivity" />
         <activity android:name=".ui.activity.OrderContentActivity"></activity>
-
     </application>
 
 </manifest>
