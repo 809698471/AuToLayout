@@ -20,6 +20,47 @@
                 android:layout_width="match_parent"
                 android:layout_height="980px">
                 <RelativeLayout
+                    android:layout_marginTop="30px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="56px"
+                        android:layout_height="56px"
+                        android:layout_marginLeft="35px"
+                        android:src="@mipmap/top_return"
+                        />
+                     <LinearLayout
+                         android:layout_alignParentRight="true"
+                         android:layout_marginRight="40px"
+                         android:layout_width="216px"
+                         android:layout_height="wrap_content">
+                         <ImageView
+                             android:layout_width="56px"
+                             android:layout_height="56px"
+                             android:src="@mipmap/top_licke"
+                             />
+                         <RelativeLayout
+                             android:layout_marginLeft="24px"
+                             android:layout_width="56px"
+                             android:layout_height="56px"
+                             android:background="@mipmap/top_bg"
+                             >
+                             <ImageView
+                                 android:layout_centerInParent="true"
+                                 android:layout_width="26px"
+                                 android:layout_height="35px"
+                                 android:src="@mipmap/top_share"
+                                 />
+                         </RelativeLayout>
+                         <ImageView
+                             android:layout_marginLeft="24px"
+                             android:layout_width="56px"
+                             android:layout_height="56px"
+                             android:src="@mipmap/top_message"
+                             />
+                     </LinearLayout>
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_alignParentBottom="true"
                     android:layout_width="match_parent"
                     android:layout_height="190px">
@@ -34,6 +75,7 @@
                         android:layout_marginRight="40px"
                         />
                     <TextView
+                        android:id="@+id/tv_message"
                         android:textSize="20sp"
                         android:layout_marginLeft="34px"
                         android:textColor="#fff"
@@ -41,7 +83,47 @@
                         android:layout_height="wrap_content"
                         android:text="大理古城小团三日游"
                         />
-
+                     <LinearLayout
+                         android:id="@+id/ll_place"
+                         android:layout_below="@id/tv_message"
+                         android:layout_marginLeft="34px"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_marginTop="50px"
+                         >
+                         <ImageView
+                             android:layout_width="30px"
+                             android:layout_height="30px"
+                             android:src="@mipmap/ic_launcher_round"
+                             />
+                         <TextView
+                             android:layout_marginLeft="20px"
+                             android:textColor="#ffffff"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:text="大理XXXXX"
+                             />
+                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_below="@id/ll_place"
+                        android:layout_marginLeft="34px"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20px"
+                        >
+                        <ImageView
+                            android:layout_width="30px"
+                            android:layout_height="30px"
+                            android:src="@mipmap/ic_launcher_round"
+                            />
+                        <TextView
+                            android:layout_marginLeft="20px"
+                            android:textColor="#ffffff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="大理XXXXX"
+                            />
+                    </LinearLayout>
                 </RelativeLayout>
                 
             </RelativeLayout>
@@ -121,6 +203,7 @@
                         android:background="#000"></View>
 
                     <Button
+                        android:layout_marginLeft="20px"
                         android:layout_width="200px"
                         android:layout_height="65px"
                         android:background="#fff"
