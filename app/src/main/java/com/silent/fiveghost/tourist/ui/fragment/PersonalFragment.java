@@ -78,6 +78,8 @@ public class PersonalFragment extends Fragment {
     }
 
 
+
+
     private void initView(View view) {
         isme_backbutton = (ImageView) view.findViewById(R.id.isme_backbutton);
         isme_settings_six = (LinearLayout) view.findViewById(R.id.isme_settings_six);
