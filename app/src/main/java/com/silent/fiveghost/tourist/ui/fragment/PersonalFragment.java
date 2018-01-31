@@ -58,7 +58,6 @@ public class PersonalFragment extends Fragment {
         isme_backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });//返回键
         img_title.setOnClickListener(new View.OnClickListener() {

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Au_To_Layout.iml" filepath="$PROJECT_DIR$/Au_To_Layout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AuToLayout.iml" filepath="$PROJECT_DIR$/AuToLayout.iml" />
+      <module fileurl="file://E:\xuexi\AuToLayout\Au_To_Layout.iml" filepath="E:\xuexi\AuToLayout\Au_To_Layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
