@@ -36,6 +36,12 @@ public class SafetyActivity extends BaseActivity {
                 startActivity(PasswordActivity.class);
             }
         });
+        back_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

@@ -63,7 +63,7 @@
             android:layout_height="40px"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="60px"
-            android:src="@drawable/setting_button" />
+            android:src="@drawable/isme_right_button" />
     </LinearLayout>
 
     <View
@@ -95,7 +95,7 @@
             android:layout_height="40px"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="60px"
-            android:src="@drawable/setting_button" />
+            android:src="@drawable/isme_right_button" />
     </LinearLayout>
 
     <View

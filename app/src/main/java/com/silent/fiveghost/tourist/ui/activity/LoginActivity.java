@@ -32,8 +32,6 @@ import java.util.Map;
 *  登录界面
 * */
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
-
-
     private EditText login_edit_yhm;//用户名
     private EditText login_edit_mm;//密码
     private Button login_btn;//登录
@@ -267,7 +265,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         map.put("password", password);
         map.put("code", code);
         presenter.DoRequest("http://120.79.137.110:80/api/v1/auth/reset-password", map);
-        // TODO validate success, do something
 
 
     }

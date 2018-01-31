@@ -9,11 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.silent.fiveghost.tourist.R;
 import com.silent.fiveghost.tourist.ui.activity.CollectActivity;
 import com.silent.fiveghost.tourist.ui.activity.HelpCenterActivity;
+import com.silent.fiveghost.tourist.ui.activity.HomeActivity;
 import com.silent.fiveghost.tourist.ui.activity.SettingActivity;
 
 /*
@@ -37,29 +39,36 @@ public class PersonalFragment extends Fragment {
     }
 
     private void initonClike() {
-        isme_settings_six.setOnClickListener(new View.OnClickListener() {
+        //返回键
+        isme_backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), SettingActivity.class));
+                Toast.makeText(getContext(), "暂无功能", Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(getContext(), HomeActivity.class));
             }
-        });//设置
-        isme_help_seven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), HelpCenterActivity.class));
-            }
-        });//帮助中心
+        });
+        //收藏
         isme_collect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), CollectActivity.class));
             }
-        });//收藏
-        isme_backbutton.setOnClickListener(new View.OnClickListener() {
+        });
+        //设置
+        isme_settings_six.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getContext(), SettingActivity.class));
             }
-        });//返回键
+        });
+        //帮助中心
+        isme_help_seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), HelpCenterActivity.class));
+            }
+        });
+
         img_title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

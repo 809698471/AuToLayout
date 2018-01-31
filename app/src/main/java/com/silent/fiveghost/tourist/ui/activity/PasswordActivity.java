@@ -2,6 +2,7 @@ package com.silent.fiveghost.tourist.ui.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -10,7 +11,7 @@ import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.R;
 
 public class PasswordActivity extends BaseActivity {
-//修改密码
+    //修改密码
     private ImageView back_settings;
     private EditText mFormer_password;
     private EditText mNew_password;
@@ -21,6 +22,17 @@ public class PasswordActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
         initView();
+        inonLister();
+    }
+
+    private void inonLister() {
+        back_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     private void initView() {

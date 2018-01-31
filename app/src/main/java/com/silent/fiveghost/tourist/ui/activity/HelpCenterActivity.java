@@ -36,6 +36,12 @@ public class HelpCenterActivity extends BaseActivity {
 
             }
         });
+        back_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initView() {

@@ -2,6 +2,7 @@ package com.silent.fiveghost.tourist.ui.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -10,7 +11,7 @@ import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.R;
 
 public class PhoneActivity extends BaseActivity {
-//绑定手机
+    //绑定手机
     private ImageView back_settings;
     private EditText phone_id;
     private EditText verification_id;
@@ -20,6 +21,16 @@ public class PhoneActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone);
         initView();
+        inonLister();
+    }
+
+    private void inonLister() {
+        back_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initView() {

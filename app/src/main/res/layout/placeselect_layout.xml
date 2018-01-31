@@ -12,7 +12,7 @@
         android:background="#34393F">
 
         <ImageView
-            android:id="@+id/back_settings"
+            android:id="@+id/back_settings_finsh"
             android:layout_width="30px"
             android:layout_height="40px"
             android:layout_centerVertical="true"
