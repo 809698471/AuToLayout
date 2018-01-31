@@ -11,4 +11,5 @@ public interface UrlUtils {
     String YZM_URL = "http://120.79.137.110:81/api/v1/sms/send";
     String LOGIN_URL = "http://120.79.137.110:80/api/v1/auth/login";
     String REGISTER_URL = "http://120.79.137.110:80/api/v1/auth/signup";
+    String FORGET_URL = "http://120.79.137.110:80/api/v1/auth/reset-password";
 }
