@@ -16,116 +16,119 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:background="@mipmap/background"
                 android:layout_width="match_parent"
-                android:layout_height="980px">
+                android:layout_height="980px"
+                android:background="@mipmap/background">
+
                 <RelativeLayout
-                    android:layout_marginTop="30px"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70px">
+
                     <ImageView
                         android:layout_width="56px"
                         android:layout_height="56px"
                         android:layout_marginLeft="35px"
-                        android:src="@mipmap/top_return"
-                        />
-                     <LinearLayout
-                         android:layout_alignParentRight="true"
-                         android:layout_marginRight="40px"
-                         android:layout_width="216px"
-                         android:layout_height="wrap_content">
-                         <ImageView
-                             android:layout_width="56px"
-                             android:layout_height="56px"
-                             android:src="@mipmap/top_licke"
-                             />
-                         <RelativeLayout
-                             android:layout_marginLeft="24px"
-                             android:layout_width="56px"
-                             android:layout_height="56px"
-                             android:background="@mipmap/top_bg"
-                             >
-                             <ImageView
-                                 android:layout_centerInParent="true"
-                                 android:layout_width="26px"
-                                 android:layout_height="35px"
-                                 android:src="@mipmap/top_share"
-                                 />
-                         </RelativeLayout>
-                         <ImageView
-                             android:layout_marginLeft="24px"
-                             android:layout_width="56px"
-                             android:layout_height="56px"
-                             android:src="@mipmap/top_message"
-                             />
-                     </LinearLayout>
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="190px">
-                    <Button
-                        android:layout_alignParentBottom="true"
+                        android:src="@mipmap/top_return" />
+
+                    <LinearLayout
+                        android:layout_width="216px"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
+                        android:layout_marginRight="40px">
+
+                        <ImageView
+                            android:layout_width="56px"
+                            android:layout_height="56px"
+                            android:src="@mipmap/top_licke" />
+
+                        <RelativeLayout
+                            android:layout_width="56px"
+                            android:layout_height="56px"
+                            android:layout_marginLeft="24px"
+                            android:background="@mipmap/top_bg">
+
+                            <ImageView
+                                android:layout_width="26px"
+                                android:layout_height="35px"
+                                android:layout_centerInParent="true"
+                                android:src="@mipmap/top_share" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="56px"
+                            android:layout_height="56px"
+                            android:layout_marginLeft="24px"
+                            android:src="@mipmap/top_message" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190px"
+                    android:layout_alignParentBottom="true">
+
+                    <Button
                         android:layout_width="140px"
                         android:layout_height="56px"
-                        android:background="@color/gree"
-                        android:text="立即咨询"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
                         android:layout_marginBottom="45px"
                         android:layout_marginRight="40px"
-                        />
+                        android:background="@color/gree"
+                        android:text="立即咨询" />
+
                     <TextView
                         android:id="@+id/tv_message"
-                        android:textSize="20sp"
-                        android:layout_marginLeft="34px"
-                        android:textColor="#fff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="34px"
                         android:text="大理古城小团三日游"
-                        />
-                     <LinearLayout
-                         android:id="@+id/ll_place"
-                         android:layout_below="@id/tv_message"
-                         android:layout_marginLeft="34px"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:layout_marginTop="50px"
-                         >
-                         <ImageView
-                             android:layout_width="30px"
-                             android:layout_height="30px"
-                             android:src="@mipmap/ic_launcher_round"
-                             />
-                         <TextView
-                             android:layout_marginLeft="20px"
-                             android:textColor="#ffffff"
-                             android:layout_width="wrap_content"
-                             android:layout_height="wrap_content"
-                             android:text="大理XXXXX"
-                             />
-                     </LinearLayout>
+                        android:textColor="#fff"
+                        android:textSize="20sp" />
+
                     <LinearLayout
-                        android:layout_below="@id/ll_place"
-                        android:layout_marginLeft="34px"
+                        android:id="@+id/ll_place"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20px"
-                        >
+                        android:layout_below="@id/tv_message"
+                        android:layout_marginLeft="34px"
+                        android:layout_marginTop="50px">
+
                         <ImageView
                             android:layout_width="30px"
                             android:layout_height="30px"
-                            android:src="@mipmap/ic_launcher_round"
-                            />
+                            android:src="@mipmap/ic_launcher_round" />
+
                         <TextView
-                            android:layout_marginLeft="20px"
-                            android:textColor="#ffffff"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="20px"
                             android:text="大理XXXXX"
-                            />
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/ll_place"
+                        android:layout_marginLeft="34px"
+                        android:layout_marginTop="20px">
+
+                        <ImageView
+                            android:layout_width="30px"
+                            android:layout_height="30px"
+                            android:src="@mipmap/ic_launcher_round" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20px"
+                            android:text="大理XXXXX"
+                            android:textColor="#ffffff" />
                     </LinearLayout>
                 </RelativeLayout>
-                
+
             </RelativeLayout>
 
             <LinearLayout
@@ -189,10 +192,11 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/bu_time_start"
                         android:layout_width="200px"
                         android:layout_height="65px"
                         android:background="#00C897"
-                        android:text="2018.03.04"
+                        android:text="开始时间"
                         android:textColor="#fff" />
 
                     <View
@@ -203,9 +207,10 @@
                         android:background="#000"></View>
 
                     <Button
-                        android:layout_marginLeft="20px"
+                        android:id="@+id/bu_time_end"
                         android:layout_width="200px"
                         android:layout_height="65px"
+                        android:layout_marginLeft="20px"
                         android:background="#fff"
                         android:text="结束时间" />
                 </LinearLayout>
@@ -495,69 +500,76 @@
                         android:layout_marginTop="25px">
 
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="90px"
                             android:layout_height="90px"
                             android:layout_marginLeft="45px"
+                            android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round" />
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="90px"
                             android:layout_height="90px"
                             android:layout_marginLeft="45px"
+                            android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round" />
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="90px"
                             android:layout_height="90px"
                             android:layout_marginLeft="45px"
+                            android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round" />
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="90px"
                             android:layout_height="90px"
                             android:layout_marginLeft="45px"
+                            android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round" />
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="90px"
                             android:layout_height="90px"
                             android:layout_marginLeft="45px"
+                            android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round" />
+
                         <ImageView
-                            android:layout_weight="1"
                             android:layout_width="90px"
                             android:layout_height="90px"
                             android:layout_marginLeft="45px"
+                            android:layout_weight="1"
                             android:src="@mipmap/ic_launcher_round" />
                     </LinearLayout>
 
                 </LinearLayout>
+
                 <LinearLayout
-                    android:layout_marginBottom="50px"
-                    android:layout_marginTop="40px"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50px"
+                    android:layout_marginTop="40px">
+
                     <ImageView
-                        android:src="@mipmap/button_ear"
-                        android:layout_marginLeft="40px"
-                        android:layout_width="80px"
-                        android:layout_height="80px" />
-                    <ImageView
-                        android:layout_marginLeft="20px"
                         android:layout_width="80px"
                         android:layout_height="80px"
-                        android:src="@mipmap/button_phone"
-                        />
+                        android:layout_marginLeft="40px"
+                        android:src="@mipmap/button_ear" />
+
+                    <ImageView
+                        android:layout_width="80px"
+                        android:layout_height="80px"
+                        android:layout_marginLeft="20px"
+                        android:src="@mipmap/button_phone" />
+
                     <Button
                         android:id="@+id/sign_up_immediately_road"
-                        android:layout_marginLeft="20px"
-                        android:text="立即报名"
-                        android:textColor="#fff"
                         android:layout_width="472px"
                         android:layout_height="80px"
+                        android:layout_marginLeft="20px"
                         android:background="#000000"
-                        />
+                        android:text="立即报名"
+                        android:textColor="#fff" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -1,33 +1,32 @@
 package com.silent.fiveghost.tourist.ui.activity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.os.Handler;
 
-import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.ui.BaseActivity;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /*
 *  启动界面
 * */
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.bu_start)
-    Button buStart;
+
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-        buStart.setOnClickListener(new View.OnClickListener() {
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
+            public void run() {
                 startActivity(WelcomeActivity.class);
+                finish();
             }
-        });
+        }, 3000);
+
+
     }
 }
