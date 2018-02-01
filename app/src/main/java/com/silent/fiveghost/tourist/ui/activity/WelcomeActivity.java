@@ -1,7 +1,9 @@
 package com.silent.fiveghost.tourist.ui.activity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -40,10 +42,9 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
         views = new ArrayList<View>();
-        LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
         //初始化引导图片列表
         for (int i = 0; i < pics.length; i++) {
             ImageView iv = new ImageView(this);
@@ -51,31 +52,40 @@ public class WelcomeActivity extends BaseActivity implements View.OnClickListene
             iv.setImageResource(pics[i]);
             views.add(iv);
         }
+
+
         bu_next = findViewById(R.id.bu_next);
         vp = (ViewPager) findViewById(R.id.viewpager);
-        //初始化Adapter
-        vpAdapter = new WelcomeAdapter(views);
+        vpAdapter = new WelcomeAdapter(views);  //初始化Adapter
         vp.setAdapter(vpAdapter);
-        //绑定回调
-        vp.setOnPageChangeListener(this);
-
-        //初始化底部小点
-        initDots();
+        vp.setOnPageChangeListener(this);        //绑定回调
+        initDots();        //初始化底部小点
         bu_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(LoginActivity.class);
-                finish();
+                initshapec();
             }
         });
 
     }
 
+    //存储
+    private void initshapec() {
+        SharedPreferences preferences = getSharedPreferences("the_username_and_password", WelcomeActivity.MODE_PRIVATE);
+        String username = preferences.getString("username", "123123");
+        String password = preferences.getString("password", "456456");
+        if (username.equals("123123") && password.equals("456456")) {
+            startActivity(LoginActivity.class);
+            finish();
+        } else {
+            startActivity(HomeActivity.class);
+        }
+
+    }
+
     private void initDots() {
         ll = (LinearLayout) findViewById(R.id.ll);
-
         dots = new ImageView[pics.length];
-
         //循环取得小点图片
         for (int i = 0; i < pics.length; i++) {
             dots[i] = (ImageView) ll.getChildAt(i);

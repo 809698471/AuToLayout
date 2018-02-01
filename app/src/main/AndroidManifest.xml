@@ -35,7 +35,7 @@
         <activity android:name=".ui.activity.GuideDetailActivity" />
         <activity android:name=".ui.activity.RoadDetailsActivity" />
         <activity android:name=".ui.activity.SettingActivity" />
-        <activity android:name=".ui.activity.SafetyActivity" />
+        <activity android:name=".ui.activity.rSafetyActivity" />
         <activity android:name=".ui.activity.PhoneActivity" />
         <activity android:name=".ui.activity.PasswordActivity" />
         <activity android:name=".ui.activity.HelpCenterActivity" />

@@ -3,10 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40px" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -15,7 +20,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="876px"></LinearLayout>
+            android:layout_height="875px"></LinearLayout>
     </LinearLayout>
 
     <RelativeLayout

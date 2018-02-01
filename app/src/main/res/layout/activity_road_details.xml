@@ -392,7 +392,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
-                                    android:text="总价/元" />
+                                    android:text="总价/元"
+                                    tools:ignore="DuplicateIds" />
 
                                 <TextView
                                     android:layout_width="wrap_content"

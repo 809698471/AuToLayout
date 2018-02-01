@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide;
 import com.silent.fiveghost.tourist.R;
 import com.silent.fiveghost.tourist.ui.activity.CollectActivity;
 import com.silent.fiveghost.tourist.ui.activity.HelpCenterActivity;
-import com.silent.fiveghost.tourist.ui.activity.HomeActivity;
 import com.silent.fiveghost.tourist.ui.activity.SettingActivity;
 
 /*
@@ -86,7 +85,6 @@ public class PersonalFragment extends Fragment {
         isme_help_seven = (LinearLayout) view.findViewById(R.id.isme_helpzx_seven);
         isme_collect = (LinearLayout) view.findViewById(R.id.isme_collect);
         img_title = (ImageView) view.findViewById(R.id.img_title);
-
     }
 
 

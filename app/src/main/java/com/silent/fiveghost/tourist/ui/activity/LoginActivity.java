@@ -1,6 +1,7 @@
 package com.silent.fiveghost.tourist.ui.activity;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -51,6 +52,17 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initView();
+
+    }
+
+    private void initdata() {
+        //账号密码存储
+        SharedPreferences preferences = getSharedPreferences("the_username_and_password", LoginActivity.MODE_PRIVATE);
+        SharedPreferences.Editor edit = preferences.edit();
+        edit.putString("username", login_edit_yhm.getText().toString());
+        edit.putString("password", login_edit_mm.getText().toString());
+        edit.commit();
+
     }
 
     private void initView() {
@@ -77,7 +89,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             //登录
             case R.id.login_btn:
                 startActivity(HomeActivity.class);
-               // loginSubmit();
+                initdata();
+                // loginSubmit();
                 break;
             //忘记密码
             case R.id.login_wangji:
@@ -228,7 +241,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         // validate
         String phone = pop_phone.getText().toString().trim();
         if (TextUtils.isEmpty(phone)) {
-          showToast("注册所用手机号");
+            showToast("注册所用手机号");
             return;
         }
 
@@ -240,7 +253,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
         String code = pop_code.getText().toString().trim();
         if (TextUtils.isEmpty(code)) {
-           showToast("请输入验证码");
+            showToast("请输入验证码");
             return;
         }
         IPresenter presenter = new IPresenter(new IView<ForgetBean>() {
