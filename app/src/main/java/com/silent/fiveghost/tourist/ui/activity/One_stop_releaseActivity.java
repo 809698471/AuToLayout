@@ -1,15 +1,15 @@
 package com.silent.fiveghost.tourist.ui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.ui.BaseActivity;
 
 
 /*
 *  一站式
 * */
-public class One_stop_releaseActivity extends AppCompatActivity {
+public class One_stop_releaseActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

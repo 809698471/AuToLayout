@@ -76,7 +76,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         switch (v.getId()) {
             //登录
             case R.id.login_btn:
-                loginSubmit();
+                startActivity(HomeActivity.class);
+               // loginSubmit();
                 break;
             //忘记密码
             case R.id.login_wangji:

@@ -116,8 +116,9 @@
         android:layout_marginTop="15px"
         android:background="@drawable/select1"
         android:gravity="center"
-        android:imeOptions="actionDone"
-        android:inputType="textPassword"
+        android:imeOptions="actionGo"
+        android:inputType="text"
+        android:password="true"
         android:textColor="#fff" />
 
     <Button

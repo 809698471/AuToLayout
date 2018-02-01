@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -52,6 +53,9 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         register_password_two.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                EditText editText = new EditText(RegisterActivity.this);
+                editText.setImeOptions(EditorInfo.IME_ACTION_GO);
+                editText.setInputType(EditorInfo.TYPE_CLASS_TEXT);
                 submit();
 
 
