@@ -35,24 +35,61 @@
                 android:layout_width="22px"
                 android:layout_height="22px"
                 android:src="@mipmap/icon_nv"
-                android:layout_marginTop="56px"
+                android:layout_marginTop="60px"
                 android:layout_marginLeft="16px"></ImageView>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24"
                 android:textColor="#fff"
-                android:layout_marginLeft="16px"
-                android:layout_marginTop="56px"/>
+                android:layout_marginLeft="12px"
+                android:layout_marginTop="54px"/>
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="导游介绍导游介绍导游介绍导游介绍导游介绍导游介绍导游介绍导游介绍导游介绍"
-            android:textColor="#22272f"
-            android:layout_margin="52px"
-            android:textSize="15sp"/>
+            android:textColor="#fff"
+            android:layout_margin="40px"
+            android:textSize="15sp"
+            />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,18 +99,20 @@
                 android:layout_width="331px"
                 android:layout_height="331px"
                 android:src="@mipmap/ic_launcher"
-                android:layout_marginTop="12px"
+                android:layout_marginTop="44px"
                 android:layout_marginLeft="31px"
                 ></ImageView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="44px">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
+                     android:layout_marginLeft="20px"
+
                     >
 
                     <ImageView
@@ -81,7 +120,7 @@
                         android:layout_width="148px"
                         android:layout_height="148px"
                         android:src="@mipmap/ic_launcher"
-                        android:layout_marginLeft="20px"/>
+                         />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -91,22 +130,26 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="车型"
-                            android:layout_marginLeft="102px"
-                            android:textSize="20sp"/>
+                            android:layout_marginLeft="134px"
+                            android:textSize="15sp"
+                            android:textColor="#fff"/>
                         <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="大巴车"
-                            android:layout_margin="4px"
-                            android:textSize="35sp"/>
+                            android:layout_marginLeft="72px"
+                            android:textSize="25sp"
+                            android:textColor="#fff"
+                             />
                         <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="星级"
-                            android:layout_marginLeft="102px"
-                            android:textSize="20sp"/>
+                            android:layout_marginLeft="134px"
+                            android:textSize="15sp"
+                            android:textColor="#fff"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -115,8 +158,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center"
+
                     android:layout_marginTop="11px"
+                    android:layout_marginLeft="20px"
                     >
 
                     <ImageView
@@ -124,37 +168,75 @@
                         android:layout_width="148px"
                         android:layout_height="148px"
                         android:src="@mipmap/ic_launcher"
-                        android:layout_marginLeft="20px"/>
+                        android:layout_marginTop="15px"
+                         />
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginTop="15px">
                         <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="星级"
-                            android:layout_marginLeft="102px"
-                            android:textSize="20sp"/>
+                            android:layout_marginLeft="134px"
+                            android:textSize="15sp"
+                            android:textColor="#fff"/>
                         <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="五星级"
-                            android:layout_margin="4px"
-                            android:textSize="35sp"/>
+                            android:textColor="#fff"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="72px"/>
                         <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="昆明"
-                            android:layout_marginLeft="102px"
-                            android:textSize="20sp"/>
+                            android:layout_marginLeft="134px"
+                            android:textSize="15sp"
+                            android:textColor="#fff"/>
                     </LinearLayout>
 
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         <TextView
@@ -237,6 +319,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_margin="40px"
             android:text="导游擅长路线介绍，导游擅长路线介绍，导游擅长路线介绍，导游擅长路线介绍，导游擅长路线介绍，导游擅长路线介绍，导游擅长路线介绍，导游擅长路线介绍。。。"></TextView>
 
         <View
@@ -269,14 +353,16 @@
                 <ImageView
                     android:layout_width="277px"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"
                     android:background="@mipmap/ic_launcher"
-                    android:layout_margin="30px"></ImageView>
+                    android:layout_weight="1"
+                    android:layout_marginLeft="31px"></ImageView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="昆明古城小团五日游"
-                    android:layout_marginLeft="33px"></TextView>
+                    android:layout_marginLeft="30px"
+                    android:layout_weight="1"
+                    android:textColor="#fff"></TextView>
             </LinearLayout>
 
 
@@ -293,14 +379,15 @@
                 <ImageView
                     android:layout_width="277px"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"
+                    android:layout_marginLeft="23px"
                     android:background="@mipmap/ic_launcher"
-                    android:layout_margin="30px"></ImageView>
+                     ></ImageView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="昆明古城小团五日游"
-                    android:layout_marginLeft="33px"></TextView>
+                    android:layout_marginLeft="30px"
+                    android:textColor="#fff"></TextView>
             </LinearLayout>
 
             <LinearLayout
@@ -312,18 +399,17 @@
                 <ImageView
                     android:layout_width="277px"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher"
+                    android:layout_marginLeft="23px"
                     android:background="@mipmap/ic_launcher"
-                    android:layout_margin="30px"></ImageView>
+                   ></ImageView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="昆"
-                    android:layout_marginLeft="33px"></TextView>
+                    android:text="昆明古城"
+                    android:textColor="#fff"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="30px"></TextView>
             </LinearLayout>
-
-
-
         </LinearLayout>
 
 

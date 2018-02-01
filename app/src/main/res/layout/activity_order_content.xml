@@ -224,7 +224,7 @@
                                 android:layout_weight="1">
 
                                 <TextView
-                                    android:id="@+id/tv_count_road"
+                                    android:id="@+id/tv_count_road2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
@@ -233,7 +233,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/tv_count_road"
+                                    android:layout_below="@id/tv_count_road2"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10px"
                                     android:text="3"
@@ -242,7 +242,6 @@
                             </RelativeLayout>
 
                             <View
-
                                 android:layout_width="3px"
                                 android:layout_height="60px"
                                 android:layout_gravity="center_horizontal"
@@ -254,7 +253,7 @@
                                 android:layout_weight="1">
 
                                 <TextView
-                                    android:id="@+id/tv_price_road"
+                                    android:id="@+id/tv_price_road3"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
@@ -263,7 +262,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/tv_price_road"
+                                    android:layout_below="@id/tv_price_road3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10px"
                                     android:text="3"
@@ -284,7 +283,7 @@
                                 android:layout_weight="1">
 
                                 <TextView
-                                    android:id="@+id/tv_count_road"
+                                    android:id="@+id/tv_count_road1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
@@ -293,7 +292,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/tv_count_road"
+                                    android:layout_below="@id/tv_count_road1"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10px"
                                     android:text="3"
@@ -314,7 +313,7 @@
                                 android:layout_weight="1">
 
                                 <TextView
-                                    android:id="@+id/tv_price_road"
+                                    android:id="@+id/tv_price_road1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_centerHorizontal="true"
@@ -323,7 +322,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/tv_price_road"
+                                    android:layout_below="@id/tv_price_road1"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginTop="10px"
                                     android:text="3"
