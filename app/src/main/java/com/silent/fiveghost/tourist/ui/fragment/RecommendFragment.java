@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import com.silent.fiveghost.tourist.adapter.RvSuggestAdapter;
 import com.silent.fiveghost.tourist.ui.activity.MessageActivity;
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;

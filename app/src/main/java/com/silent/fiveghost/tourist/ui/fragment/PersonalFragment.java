@@ -21,7 +21,6 @@ import com.silent.fiveghost.tourist.ui.activity.SettingActivity;
 * 个人中心-----
 * */
 public class PersonalFragment extends Fragment {
-    private ImageView isme_backbutton;//返回按钮
     private LinearLayout isme_settings_six;//设置
     private LinearLayout isme_help_seven;//帮助
     private LinearLayout isme_collect;//收藏
@@ -38,14 +37,6 @@ public class PersonalFragment extends Fragment {
     }
 
     private void initonClike() {
-        //返回键
-        isme_backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "暂无功能", Toast.LENGTH_SHORT).show();
-//                startActivity(new Intent(getContext(), HomeActivity.class));
-            }
-        });
         //收藏
         isme_collect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,7 +71,6 @@ public class PersonalFragment extends Fragment {
 
 
     private void initView(View view) {
-        isme_backbutton = (ImageView) view.findViewById(R.id.isme_backbutton);
         isme_settings_six = (LinearLayout) view.findViewById(R.id.isme_settings_six);
         isme_help_seven = (LinearLayout) view.findViewById(R.id.isme_helpzx_seven);
         isme_collect = (LinearLayout) view.findViewById(R.id.isme_collect);

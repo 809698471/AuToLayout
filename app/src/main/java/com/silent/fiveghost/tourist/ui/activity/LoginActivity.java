@@ -89,8 +89,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             //登录
             case R.id.login_btn:
                 startActivity(HomeActivity.class);
-                initdata();
-                // loginSubmit();
+
+                loginSubmit();
                 break;
             //忘记密码
             case R.id.login_wangji:
@@ -217,7 +217,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             public void success(LoginBean loginBean) {
                 errcode = loginBean.getErrcode();
                 if (errcode == 1) {
-                    showToast("登录成功");
+                    initdata();
                     startActivity(HomeActivity.class);
                 } else {
                     showToast("登录失败");
@@ -278,7 +278,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         map.put("tel", phone);
         map.put("password", password);
         map.put("code", code);
-        presenter.DoRequest("http://120.79.137.110:80/api/v1/auth/reset-password", map);
+        presenter.DoRequest(UrlUtils.FORGET_URL, map);
 
 
     }

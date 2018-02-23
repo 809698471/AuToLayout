@@ -4,14 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="40px" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45px">
+        android:layout_height="88px"
+        android:layout_marginTop="40px">
 
         <SearchView
             android:id="@+id/search_view"

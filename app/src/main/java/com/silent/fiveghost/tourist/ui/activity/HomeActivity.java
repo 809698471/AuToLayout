@@ -3,6 +3,7 @@ package com.silent.fiveghost.tourist.ui.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,6 +16,7 @@ import com.silent.fiveghost.tourist.ui.fragment.PersonalFragment;
 import com.silent.fiveghost.tourist.ui.fragment.RecommendFragment;
 import com.silent.fiveghost.tourist.ui.fragment.ReleaseItineraryFragment;
 import com.silent.fiveghost.tourist.R;
+import com.silent.fiveghost.tourist.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,7 @@ public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        StatusBarUtil.StatusBarLightMode(HomeActivity.this,1);
         ButterKnife.bind(this);
         List<Fragment> fragmentList = new ArrayList<>();
         RecommendFragment recommendFragment = new RecommendFragment();

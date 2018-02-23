@@ -7,31 +7,6 @@
     android:orientation="vertical">
 
 
-
-
-            <!--AppBarLayout标题的容器，只能作为coordinatorlayout里面的第一个子View
-               AppBarLayout是一个容器，需要滚动的子view必须放到这个容器里面
-               android:fitsSystemWindows="true"          适应系统，是否把内容显示到状态栏
-               app:layout_scrollFlags="scroll"           决定子view能否滚出屏幕
-               -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="40px"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:background="#2C3238" />
-
-            <android.support.design.widget.CoordinatorLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <android.support.design.widget.AppBarLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#191F28"
-                    android:fitsSystemWindows="true">
-
                     <!--
                     AppBarLayout里放入的都可以跟着向上滑动滑出布局的的，
                     添加app:layout_scrollFlags="scroll"属性可以滑出布局
@@ -144,14 +119,13 @@
                         </RelativeLayout>
                     </LinearLayout>
 
-                </android.support.design.widget.AppBarLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
+                   >
                     <android.support.v4.widget.SwipeRefreshLayout
+                        android:id="@+id/spl_features"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -163,7 +137,4 @@
                     </android.support.v4.widget.SwipeRefreshLayout>
 
                 </RelativeLayout>
-
-            </android.support.design.widget.CoordinatorLayout>
-
 </LinearLayout>
