@@ -2,11 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_marginTop="30px"
     android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
-           android:layout_centerHorizontal="true"
+        android:layout_marginTop="15px"
+        android:background="@mipmap/tourists_tuijian_list_bg_normal"
+        android:layout_centerHorizontal="true"
         android:layout_width="666px"
         android:layout_height="240px"
         android:layout_marginLeft="10dp"
@@ -17,7 +18,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@mipmap/tourists_tuijian_list_bg_normal">
+            >
 
             <ImageView
                 android:id="@+id/iv_item_card"
@@ -25,7 +26,7 @@
                 android:layout_height="200px"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20px"
-                android:background="@mipmap/ic_launcher" />
+                />
 
             <TextView
                 android:id="@+id/tv_content_card_for"
@@ -40,6 +41,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/tv_guide_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_content_card_for"

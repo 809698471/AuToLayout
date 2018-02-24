@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+     android:layout_marginTop="50px"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="136px">
+    android:layout_height="155px">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/ll_one_item_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -21,13 +24,14 @@
                 android:background="@mipmap/btn_zhoubianyou_norma" />
 
             <TextView
-                android:id="@+id/tv_one"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22px" />
+                android:layout_marginTop="22px"
+                android:text="周边游" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_two_item_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -40,13 +44,14 @@
                 android:background="@mipmap/btn_sheyingyou_norma" />
 
             <TextView
-                android:id="@+id/tv_two"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22px" />
+                android:layout_marginTop="22px"
+                android:text="周边游" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_three_item_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -59,13 +64,14 @@
                 android:background="@mipmap/btn_xyou_normal" />
 
             <TextView
-                android:id="@+id/tv_three"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22px" />
+                android:layout_marginTop="22px"
+                android:text="周边游" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_for_item_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -78,13 +84,14 @@
                 android:background="@mipmap/btn_xxyou_normal" />
 
             <TextView
-                android:id="@+id/tv_for"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22px" />
+                android:layout_marginTop="22px"
+                android:text="周边游" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_five_item_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -97,11 +104,11 @@
                 android:background="@mipmap/btn_xxxyou_normal" />
 
             <TextView
-                android:id="@+id/tv_five"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22px" />
+                android:layout_marginTop="22px"
+                android:text="周边游" />
         </LinearLayout>
 
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

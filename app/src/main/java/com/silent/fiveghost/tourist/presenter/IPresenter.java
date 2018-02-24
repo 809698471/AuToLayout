@@ -26,4 +26,8 @@ public class IPresenter {
     public void DoRequest(String url, Map<String, String> map) {
         model.request(url, map, view);
     }
+
+    public void DoGet(String url) {
+        model.GetRequst(url, view);
+    }
 }

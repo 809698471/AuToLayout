@@ -149,7 +149,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
                 Log.e("TAG", registBean.getErrcode() + "注册返回值");
                 if (registBean.getErrcode() == 1) {
-                    Toast.makeText(RegisterActivity.this, "注册成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "注册成功，老韩是智障", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
                     Toast.makeText(RegisterActivity.this, registBean.getErrmsg(), Toast.LENGTH_SHORT).show();

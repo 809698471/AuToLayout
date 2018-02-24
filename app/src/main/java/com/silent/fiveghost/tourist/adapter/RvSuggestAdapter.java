@@ -2,17 +2,22 @@ package com.silent.fiveghost.tourist.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
+import com.silent.fiveghost.tourist.bean.HomeBean;
 import com.silent.fiveghost.tourist.ui.activity.GuideStyleActivity;
 import com.silent.fiveghost.tourist.ui.activity.RoadDetailsActivity;
 import com.recker.flybanner.FlyBanner;
@@ -32,16 +37,17 @@ import java.util.List;
 public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private List<String> strings;
-    private List<String> stringList;
-    private List<String> stringList1;
-    private List<String> stringList2;
+    private List<HomeBean.DataBean.AdvertBean> advert;
+    private List<HomeBean.DataBean.RouteBean> route;
+    private List<HomeBean.DataBean.GuideBean> guide;
 
-    public RvSuggestAdapter(Context context, List<String> strings, List<String> stringList, List<String> stringList1, List<String> stringList2) {
+    public RvSuggestAdapter(Context context, List<String> strings, List<HomeBean.DataBean.AdvertBean> advert, List<HomeBean.DataBean.RouteBean> route, List<HomeBean.DataBean.GuideBean> guide) {
         this.context = context;
-        this.stringList = stringList;
-        this.stringList1 = stringList1;
-        this.stringList2 = stringList2;
         this.strings = strings;
+        this.advert = advert;
+        this.route = route;
+        this.guide = guide;
+
     }
 
     @Override
@@ -90,22 +96,21 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof OneViewHolder) {
-            List<Integer> integers = new ArrayList<Integer>();
-            integers.add(R.mipmap.ic_launcher);
-            integers.add(R.mipmap.ic_launcher);
-            integers.add(R.mipmap.ic_launcher);
-            ((OneViewHolder) holder).fl_banner_one.setImages(integers);
+            List<String> bannerList = new ArrayList<String>();
+            for (int a = 0; a < advert.size(); a++) {
+                String img = advert.get(a).getImg();
+                bannerList.add(img);
+            }
+            ((OneViewHolder) holder).fl_banner_one.setImagesUrl(bannerList);
         } else if (holder instanceof TwoViewHolder) {
-            ((TwoViewHolder) holder).tv_one.setText(stringList.get(0));
-            ((TwoViewHolder) holder).tv_two.setText(stringList.get(1));
-            ((TwoViewHolder) holder).tv_three.setText(stringList.get(2));
-            ((TwoViewHolder) holder).tv_for.setText(stringList.get(3));
-            ((TwoViewHolder) holder).tv_five.setText(stringList.get(4));
+
         } else if (holder instanceof ThreeViewHolder) {
-            ((ThreeViewHolder) holder).tv_content.setText(stringList1.get(0));
-            ((ThreeViewHolder) holder).tv_content_two.setText(stringList1.get(1));
-            ((ThreeViewHolder) holder).tv_content_three.setText(stringList1.get(2));
-            ((ThreeViewHolder) holder).tv_content_for.setText(stringList1.get(3));
+            ((ThreeViewHolder) holder).tv_content.setText(route.get(0).getName());
+            Glide.with(context).load(route.get(0).getImg()).into(((ThreeViewHolder) holder).iv_rvitemthree_one);
+            ((ThreeViewHolder) holder).tv_content_two.setText(route.get(1).getName());
+            ((ThreeViewHolder) holder).tv_content_three.setText(route.get(2).getName());
+            ((ThreeViewHolder) holder).tv_content_for.setText(route.get(3).getName());
+
             ((ThreeViewHolder) holder).cv_one.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -113,7 +118,7 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 }
             });
         } else if (holder instanceof ForViewHolder) {
-            ScrollDisabledListViewAdapter adapter = new ScrollDisabledListViewAdapter(stringList2);
+            ScrollDisabledListViewAdapter adapter = new ScrollDisabledListViewAdapter(guide);
             ((ForViewHolder) holder).viewById.setAdapter(adapter);
             ((ForViewHolder) holder).guidestyle.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -143,20 +148,21 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     private class TwoViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tv_one;
-        private TextView tv_two;
-        private TextView tv_three;
-        private TextView tv_for;
-        private TextView tv_five;
+
+        private LinearLayout ll_one_item_two;
+        private LinearLayout ll_two_item_two;
+        private LinearLayout ll_three_item_two;
+        private LinearLayout ll_for_item_two;
+        private LinearLayout ll_five_item_two;
 
         public TwoViewHolder(View v2) {
             super(v2);
             AutoUtils.autoSize(v2);
-            tv_one = v2.findViewById(R.id.tv_one);
-            tv_two = v2.findViewById(R.id.tv_two);
-            tv_three = v2.findViewById(R.id.tv_three);
-            tv_for = v2.findViewById(R.id.tv_for);
-            tv_five = v2.findViewById(R.id.tv_five);
+            ll_one_item_two = v2.findViewById(R.id.ll_one_item_two);
+            ll_two_item_two = v2.findViewById(R.id.ll_two_item_two);
+            ll_three_item_two = v2.findViewById(R.id.ll_three_item_two);
+            ll_for_item_two = v2.findViewById(R.id.ll_for_item_two);
+            ll_five_item_two = v2.findViewById(R.id.ll_five_item_two);
         }
     }
 
@@ -168,6 +174,7 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         private TextView tv_content_three;
         private TextView tv_content_for;
         private CardView cv_one;
+        private  ImageView iv_rvitemthree_one;
 
         public ThreeViewHolder(View v3) {
             super(v3);
@@ -176,6 +183,7 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             tv_content_two = v3.findViewById(R.id.tv_content_two);
             tv_content_three = v3.findViewById(R.id.tv_content_three);
             tv_content_for = v3.findViewById(R.id.tv_content_for);
+            iv_rvitemthree_one = v3.findViewById(R.id.iv_rvitemthree_one);
             cv_one = v3.findViewById(R.id.cv_one);
 
         }
@@ -198,9 +206,9 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
 
     private class ScrollDisabledListViewAdapter extends BaseAdapter {
-        private List<String> stringList2;
+        private List<HomeBean.DataBean.GuideBean> stringList2;
 
-        public ScrollDisabledListViewAdapter(List<String> stringList2) {
+        public ScrollDisabledListViewAdapter(List<HomeBean.DataBean.GuideBean> stringList2) {
             this.stringList2 = stringList2;
         }
 
@@ -226,16 +234,22 @@ public class RvSuggestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 holder = new ViewHolder();
                 convertView = LayoutInflater.from(context).inflate(R.layout.guideitem, parent, false);
                 holder.tv_daoyou = convertView.findViewById(R.id.tv_content_card_for);
+                holder.iv_item_card = convertView.findViewById(R.id.iv_item_card);
+                holder.tv_content=convertView.findViewById(R.id.tv_guide_like);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
-            holder.tv_daoyou.setText(stringList2.get(position));
+            holder.tv_daoyou.setText(stringList2.get(position).getUsername());
+            Glide.with(context).load(stringList2.get(position).getAvatar()).into(holder.iv_item_card);
+            holder.tv_content.setText(stringList2.get(position).getGood_line_desc());
             return convertView;
         }
 
         class ViewHolder {
             TextView tv_daoyou;
+            ImageView iv_item_card;
+            TextView tv_content;
         }
     }
 }

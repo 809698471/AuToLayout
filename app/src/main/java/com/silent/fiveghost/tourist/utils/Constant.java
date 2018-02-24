@@ -38,7 +38,7 @@ public class Constant {
     //get请求
     public static void getRequest(String url) {
         ApiService apiservice = MyRetrofit.getInstance().create(ApiService.class);
-        Observable<ResponseBody> observable = apiservice.get(url);
+        Observable<ResponseBody> observable = apiservice.postOne(url);
         observable
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

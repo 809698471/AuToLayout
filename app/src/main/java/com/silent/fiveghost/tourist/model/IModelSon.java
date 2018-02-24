@@ -58,4 +58,41 @@ public class IModelSon implements IModel {
                     }
                 });
     }
+
+    @Override
+    public void GetRequst(String url, final CallBack callBack) {
+        ApiService apiService = MyRetrofit.getInstance().create(ApiService.class);
+        Observable<ResponseBody> responseBodyObservable = apiService.postOne(url);
+        responseBodyObservable
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<ResponseBody>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.defeat(e.toString());
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+
+                        try {
+                            String string = responseBody.string();
+                            Type[] genericInterfaces = callBack.getClass().getGenericInterfaces();
+                            Type[] actualTypeArguments = ((ParameterizedType) genericInterfaces[0]).getActualTypeArguments();
+                            Type actualTypeArgument = actualTypeArguments[0];
+                            Gson gson = new Gson();
+                            Object o = gson.fromJson(string, actualTypeArgument);
+                            callBack.success(o);
+                        } catch (IOException e) {
+                            callBack.defeat(e.toString());
+                        }
+                    }
+                });
+    }
+
 }

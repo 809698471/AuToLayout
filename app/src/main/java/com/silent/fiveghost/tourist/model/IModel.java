@@ -11,4 +11,5 @@ import java.util.Map;
 
 public interface IModel {
     void request(String url, Map<String, String> map, CallBack callBack);
+    void GetRequst(String url,CallBack callBack);
 }

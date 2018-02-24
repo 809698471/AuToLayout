@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.silent.fiveghost.tourist.adapter.HomeVpAdapter;
+import com.silent.fiveghost.tourist.bean.HomeBean;
+import com.silent.fiveghost.tourist.presenter.IPresenter;
 import com.silent.fiveghost.tourist.ui.BaseActivity;
 import com.silent.fiveghost.tourist.ui.fragment.FeaturesFragment;
 import com.silent.fiveghost.tourist.ui.fragment.OrderFragment;
@@ -17,9 +20,13 @@ import com.silent.fiveghost.tourist.ui.fragment.RecommendFragment;
 import com.silent.fiveghost.tourist.ui.fragment.ReleaseItineraryFragment;
 import com.silent.fiveghost.tourist.R;
 import com.silent.fiveghost.tourist.utils.StatusBarUtil;
+import com.silent.fiveghost.tourist.utils.UrlUtils;
+import com.silent.fiveghost.tourist.view.IView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,8 +45,9 @@ public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        StatusBarUtil.StatusBarLightMode(HomeActivity.this,1);
+        StatusBarUtil.StatusBarLightMode(HomeActivity.this, 1);
         ButterKnife.bind(this);
+
         List<Fragment> fragmentList = new ArrayList<>();
         RecommendFragment recommendFragment = new RecommendFragment();
         FeaturesFragment featuresFragment = new FeaturesFragment();
@@ -86,6 +94,8 @@ public class HomeActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         });
         mRadioGroup.setOnCheckedChangeListener(this);
     }
+
+
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {

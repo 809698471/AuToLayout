@@ -54,7 +54,6 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
-
                 android:id="@+id/cv_one"
                 android:layout_width="335px"
                 android:layout_height="337px"
@@ -67,8 +66,12 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@mipmap/ic_launcher">
-
+                    >
+                     <ImageView
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:id="@+id/iv_rvitemthree_one"
+                         />
                     <TextView
                         android:id="@+id/tv_content_card"
                         android:layout_width="wrap_content"

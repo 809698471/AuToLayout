@@ -21,9 +21,6 @@ public interface ApiService {
     @FormUrlEncoded
     @POST
     Observable<ResponseBody> post(@Url String url, @FieldMap Map<String, String> mParams);
-    @FormUrlEncoded
-    @POST
-    Observable<ResponseBody> postOne(@Url String url);
     @GET
-    Observable<ResponseBody>  get(@Url String mKey);
+    Observable<ResponseBody> postOne(@Url String url);
 }
